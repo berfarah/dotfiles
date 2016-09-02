@@ -1,0 +1,19 @@
+# Just for the berfarah/dotfiles repo
+
+# Ignore working files for nvim
+/.config/nvim/swap/*
+/.config/nvim/backup/*
+/.config/nvim/undo/*
+/.config/nvim/sessions/*
+/.config/nvim/plugged/
+/.config/nvim/autoload/
+/.config/nvim/.init.vim-rplugin~
+/.config/nvim/.netrwhist
+
+# Ignore ranger working files
+/.config/ranger/*
+
+# Ignore work.sh
+/.config/zsh/work.sh
+
+!.keep
