@@ -9,9 +9,7 @@ export PATH="$PATH:$SCRIPTS_PATH"
 # Sourcing
 plugins=(rails osx brew gitfast zsh-autosuggestions)
 source $XDG_CONFIG_HOME/zsh/git.sh
-if [ -f $XDG_CONFIG_HOME/zsh/work.sh ]; then
-  source $XDG_CONFIG_HOME/zsh/work.sh
-fi
+[ -f $XDG_CONFIG_HOME/zsh/work.sh ] && source $XDG_CONFIG_HOME/zsh/work.sh
 source $ZSH/oh-my-zsh.sh
 
 # Additional aliases
