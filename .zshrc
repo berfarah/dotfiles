@@ -9,8 +9,8 @@ export PATH="$PATH:$SCRIPTS_PATH"
 # Sourcing
 plugins=(rails osx brew gitfast zsh-autosuggestions)
 source $XDG_CONFIG_HOME/zsh/git.sh
-[ -f $XDG_CONFIG_HOME/zsh/work.sh ] && source $XDG_CONFIG_HOME/zsh/work.sh
 source $ZSH/oh-my-zsh.sh
+[ -f $XDG_CONFIG_HOME/zsh/work.sh ] && source $XDG_CONFIG_HOME/zsh/work.sh
 
 # Additional aliases
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'

@@ -72,7 +72,7 @@ prompt_geometry_git_remote_check() {
     if [[ $common_base == $remote_commit ]]; then
       echo "$commit_difference $GIT_UNPUSHED"
     elif [[ $common_base == $local_commit ]]; then
-      echo "$commit_difference n$GIT_UNPULLED"
+      echo "$commit_difference $GIT_UNPULLED"
     else
       echo "$GIT_UNPUSHED $GIT_UNPULLED"
     fi
