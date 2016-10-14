@@ -23,6 +23,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'jdkanani/vim-material-theme'
 Plug 'rakr/vim-one'
 Plug 'raphamorim/lucario'
+Plug 'jacoborus/tender'
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -30,16 +31,12 @@ Plug 'janko-m/vim-test'
 " Rename files from within vim
 Plug 'tpope/vim-eunuch'
 
-" Split navigation that works with tmux
-Plug 'christoomey/vim-tmux-navigator'
-
 " Syntax
 Plug 'tpope/vim-git', { 'for': 'git' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'rstacruz/sparkup', { 'for': ['html', 'css'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'darfink/vim-plist'
 Plug 'kchmck/vim-coffee-script'
 
 " Javascript
@@ -58,7 +55,6 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/vim-easy-align'
 
 " Syntastic: Code linting errors
-" Plug 'scrooloose/syntastic', { 'for': ['ruby', 'go', 'javascript', 'css'] }
 Plug 'neomake/neomake'
 
 " Searching
