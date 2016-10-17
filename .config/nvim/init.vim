@@ -237,6 +237,8 @@ nnoremap <right> <C-w>l
 nnoremap <up> <C-w>k
 nnoremap <down> <C-w>j
 
+command Gcane :!git commit --amend --no-edit %
+
 " Leader mappings
 " ----------------------------------------------------------------------------
 

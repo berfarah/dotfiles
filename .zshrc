@@ -25,8 +25,18 @@ if [ -f `which nvim` ]; then
   export EDITOR=$VISUAL
 fi
 
+# ripgrep
+unalias rg
+alias ag="rg"
+alias ack="rg"
+alias grep="rg"
+
+# hub
+alias git='hub'
+eval "$(hub alias -s)"
+
 # FZF
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files'
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"

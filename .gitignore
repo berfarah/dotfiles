@@ -20,4 +20,7 @@
 # Ignore work.sh
 /.config/zsh/work.sh
 
+# Ignore github credentials
+/.config/hub
+
 !.keep
