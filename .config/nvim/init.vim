@@ -119,13 +119,10 @@ map <Leader>l :TestLast<CR>
 syntax on                                " Syntax on by default
 
 if has('nvim')
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
 
-if exists('termguicolors')
-  set termguicolors " this will eventually be added to neovim
-endif
+set termguicolors " this will eventually be added to neovim
 
 set background=dark
 colorscheme material-theme

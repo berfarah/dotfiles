@@ -7,7 +7,7 @@ SCRIPTS_PATH="$HOME/Code/scripts"
 export PATH="$PATH:$SCRIPTS_PATH"
 
 # Sourcing
-plugins=(rails osx brew gitfast zsh-autosuggestions)
+plugins=(rails osx gitfast zsh-autosuggestions)
 source $XDG_CONFIG_HOME/zsh/git.sh
 source $ZSH/oh-my-zsh.sh
 [ -f $XDG_CONFIG_HOME/zsh/work.sh ] && source $XDG_CONFIG_HOME/zsh/work.sh
