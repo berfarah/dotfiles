@@ -38,6 +38,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'rstacruz/sparkup', { 'for': ['html', 'css'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'kchmck/vim-coffee-script'
+Plug 'rhysd/vim-crystal'
 
 " Javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
