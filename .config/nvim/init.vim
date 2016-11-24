@@ -38,11 +38,11 @@ let g:fzf_colors =
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine'],
+  \ 'bg+':     ['bg', 'Normal'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
+  \ 'pointer': ['fg', 'CursorLine'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
@@ -235,6 +235,7 @@ nnoremap <up> <C-w>k
 nnoremap <down> <C-w>j
 
 command Gcane :!git commit --amend --no-edit %
+command Gadd :!git add %
 
 " Leader mappings
 " ----------------------------------------------------------------------------

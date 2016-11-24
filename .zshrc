@@ -18,7 +18,7 @@ alias resource='source ~/.zshrc'
 alias cdc='cd ~/Code'
 
 # NeoVim
-if [ -f `which nvim` ]; then
+if [ -f "$(which nvim)" ]; then
   alias vim="nvim"
   alias vi="nvim"
   export VISUAL="nvim"
@@ -28,12 +28,9 @@ fi
 # ripgrep
 unalias rg
 alias ag="rg"
-alias ack="rg"
-alias grep="rg"
 
 # hub
-alias git='hub'
-eval "$(hub alias -s)"
+alias git=hub
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files'
