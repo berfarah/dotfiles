@@ -56,10 +56,11 @@ nmap <Leader><Tab> <plug>(fzf-maps-n)
 xmap <Leader><Tab> <plug>(fzf-maps-x)
 omap <Leader><Tab> <plug>(fzf-maps-o)
 
-" Neomake (linter)
+" Ale (linter)
 " ----------------------------------------------------------------------------
-autocmd! BufEnter * Neomake
-autocmd! BufWritePost * Neomake
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
 
 " Deoplete (autocomplete)
 " ----------------------------------------------------------------------------

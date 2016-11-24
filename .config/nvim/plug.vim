@@ -55,8 +55,8 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 " Alignment in VIM
 Plug 'junegunn/vim-easy-align'
 
-" Syntastic: Code linting errors
-Plug 'neomake/neomake'
+" Ale: Code linting errors
+Plug 'w0rp/ale'
 
 " Searching
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
