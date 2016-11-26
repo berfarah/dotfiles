@@ -52,6 +52,9 @@ Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 
+" Plist OSX
+Plug 'darfink/vim-plist'
+
 " Alignment in VIM
 Plug 'junegunn/vim-easy-align'
 
