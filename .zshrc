@@ -33,7 +33,7 @@ alias ag="rg"
 alias git=hub
 
 # FZF
-export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
