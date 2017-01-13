@@ -53,6 +53,25 @@ git_new_count() {
   fi
 }
 
+git_commits_ahead() {
+  # Return total commit count if no remote set
+  if [[ $(git remote) == "" ]]; then
+    echo $(git rev-list --all --count)
+    return
+  fi
+  count=$(git rev-list --count @"{u}"..)
+  if test $count -ne 0; then
+    echo $count
+  fi
+}
+
+git_commits_behind() {
+  count=$(git rev-list --count ..@"{u}")
+  if test $count -ne 0; then
+    echo $count
+  fi
+}
+
 prompt_geometry_git_rebase_check() {
   git_dir=$(git rev-parse --git-dir)
   if test -d "$git_dir/rebase-merge" -o -d "$git_dir/rebase-apply"; then
@@ -62,17 +81,16 @@ prompt_geometry_git_rebase_check() {
 
 prompt_geometry_git_remote_check() {
   local_commit=$(git rev-parse @ 2>&1)
-  remote_commit=$(git rev-parse @{u} 2>&1)
-  common_base=$(git merge-base @ @{u} 2>&1) # last common commit
-  commit_difference=$(git rev-list --count HEAD..origin 2>/dev/null)
+  remote_commit=$(git rev-parse @"{u}" 2>&1)
+  common_base=$(git merge-base @ @"{u}" 2>&1) # last common commit
 
   if [[ $local_commit == $remote_commit ]]; then
     echo ""
   else
     if [[ $common_base == $remote_commit ]]; then
-      echo "$commit_difference $GIT_UNPUSHED"
+      echo "$(git_commits_ahead) $GIT_UNPUSHED"
     elif [[ $common_base == $local_commit ]]; then
-      echo "$commit_difference $GIT_UNPULLED"
+      echo "$(git_commits_behind) $GIT_UNPULLED"
     else
       echo "$GIT_UNPUSHED $GIT_UNPULLED"
     fi
