@@ -252,3 +252,6 @@ map <Leader>cd :let @* = expand("%:p:h")<CR>
 
 " Remove highlight
 map <Leader>h :noh<CR>
+
+" Syntax highlighting for jbuilder
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby

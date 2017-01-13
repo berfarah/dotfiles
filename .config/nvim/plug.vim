@@ -35,7 +35,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-git', { 'for': 'git' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'rstacruz/sparkup', { 'for': ['html', 'css'] }
+Plug 'rstacruz/sparkup', { 'for': ['html', 'css', 'eruby'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'rhysd/vim-crystal'
