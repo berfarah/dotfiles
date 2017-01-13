@@ -54,10 +54,13 @@ git_new_count() {
 }
 
 git_commits_ahead() {
-  # Return total commit count if no remote set
+# Return total commit count if no remote set
   if [[ $(git remote) == "" ]]; then
     echo $(git rev-list --all --count)
     return
+  fi
+  if [[ $(git rev-parse --abbrev-ref @"{upstream}" 2>/dev/null) == "" ]]; then
+    return # no upstream
   fi
   count=$(git rev-list --count @"{u}"..)
   if test $count -ne 0; then
