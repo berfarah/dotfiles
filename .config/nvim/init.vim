@@ -51,6 +51,8 @@ let g:fzf_colors =
 " mappings
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-f> :Ag<Space>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap gst :GFiles?<CR>
 
 " Search through vim maps
 nmap <Leader><Tab> <plug>(fzf-maps-n)

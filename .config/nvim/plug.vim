@@ -24,6 +24,7 @@ Plug 'jdkanani/vim-material-theme'
 Plug 'rakr/vim-one'
 Plug 'raphamorim/lucario'
 Plug 'jacoborus/tender'
+Plug 'w0ng/vim-hybrid'
 
 " Testing
 Plug 'janko-m/vim-test'

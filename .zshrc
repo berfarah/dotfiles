@@ -34,6 +34,7 @@ alias git=hub
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_OPTS='--bind tab:toggle-out,shift-tab:toggle-in'
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
