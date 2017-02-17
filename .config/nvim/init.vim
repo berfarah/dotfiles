@@ -28,8 +28,9 @@ nnoremap <leader>gsd :GitSessionDelete<cr>
 " FZF (fuzzy finder)
 " ----------------------------------------------------------------------------
 " options
+let g:fzf_buffers_jump = 1
 let g:fzf_action =
-\ { 'enter': 'tab split',
+\ { 'enter': 'tab drop',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
