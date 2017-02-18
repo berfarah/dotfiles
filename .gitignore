@@ -27,3 +27,5 @@
 /.config/hub
 
 !.keep
+
+/node_modules
