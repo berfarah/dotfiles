@@ -26,6 +26,9 @@
 # Ignore github credentials
 /.config/hub
 
+/.config/yarn/global/
+/.config/configstore/
+
 !.keep
 
 /node_modules

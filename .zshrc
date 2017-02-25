@@ -47,3 +47,5 @@ export NODE_PATH="/usr/local/lib/node"
 # GO
 export GOPATH="$HOME/Code/golang"
 export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
+
+export PATH="$HOME/.yarn/bin:$PATH"
