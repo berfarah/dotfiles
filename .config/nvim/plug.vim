@@ -27,7 +27,7 @@ Plug 'jacoborus/tender'
 Plug 'w0ng/vim-hybrid'
 
 " Testing
-Plug 'janko-m/vim-test'
+Plug 'janko-m/vim-test', { 'for': ['javascript', 'ruby'] }
 
 " Rename files from within vim
 Plug 'tpope/vim-eunuch'
@@ -48,7 +48,6 @@ Plug 'alexbyk/vim-ultisnips-js-testing'
 
 " Ruby
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'janko-m/vim-test', { 'for': 'ruby' }
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }

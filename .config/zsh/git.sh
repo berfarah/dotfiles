@@ -7,6 +7,7 @@ alias gpc="git push origin HEAD"
 alias gpcu="git push --set-upstream origin HEAD"
 alias gpf="git push --force-with-lease"
 alias gds="git diff --staged"
+alias gpr="git push --set-upstream origin HEAD && git pull-request"
 
 nonmaster_branches () {
   CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`

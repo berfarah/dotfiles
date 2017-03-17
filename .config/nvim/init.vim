@@ -111,6 +111,7 @@ let g:airline_powerline_fonts=0
 " ----------------------------------------------------------------------------
 " options
 let test#strategy = "neovim"
+let g:test#javascript#mocha#executable = "yarn test"
 
 " mappings
 map <Leader>t :TestFile<CR>
