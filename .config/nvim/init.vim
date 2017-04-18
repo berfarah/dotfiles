@@ -14,16 +14,9 @@ let NERDTreeShowHidden=1
 map <Leader>n <Plug>NERDTreeTabsToggle<CR>
 map <Leader>\ :NERDTreeTabsOpen<CR><c-w>l:NERDTreeTabsFind<CR>
 
-" Git session management
-" ----------------------------------------------------------------------------
-" options
-let sessionoptions = 'curdir,folds,help,tabpages,winsize'
-let g:gitsessions_dir = '/Users/bernardo/.config/nvim/sessions'
-
-" mappings
-nnoremap <leader>gss :GitSessionSave<cr>
-nnoremap <leader>gsl :GitSessionLoad<cr>
-nnoremap <leader>gsd :GitSessionDelete<cr>
+" Vim Tags
+let g:neotags_enabled = 1
+let g:neotags_highlight = 0
 
 " FZF (fuzzy finder)
 " ----------------------------------------------------------------------------
@@ -107,11 +100,15 @@ let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:airline_powerline_fonts=0
 
+" Exit terminal with escape
+tnoremap <Leader><Esc> <C-\><C-n>
+
 " VimTest
 " ----------------------------------------------------------------------------
 " options
 let test#strategy = "neovim"
 let g:test#javascript#mocha#executable = "yarn test"
+let g:test#javascript#jest#executable = "yarn test"
 
 " mappings
 map <Leader>t :TestFile<CR>
@@ -132,8 +129,6 @@ set termguicolors " this will eventually be added to neovim
 set background=dark
 colorscheme material-theme
 let g:airline_theme = 'base16_flat' " Airline
-set cursorline
-
 
 " ============================================================================
 "   Settings
@@ -249,10 +244,12 @@ command Gadd :!git add %
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
 
 " Get full path of buffer
-map <Leader>cf :let @* = expand("%:p")<CR>
+map <Leader>cff :let @* = expand("%:p")<CR>
+map <Leader>cf :let @* = expand("%")<CR>
 
 " Get full directory of buffer
-map <Leader>cd :let @* = expand("%:p:h")<CR>
+map <Leader>cdd :let @* = expand("%:p:h")<CR>
+map <Leader>cd :let @* = expand("%:h")<CR>
 
 " Remove highlight
 map <Leader>h :noh<CR>
