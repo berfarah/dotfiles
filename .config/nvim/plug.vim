@@ -19,7 +19,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'brooth/far.vim', { 'do': ':UpdateRemotePlugins' }
-Plug 'c0r73x/neotags.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'google/vim-searchindex'
 Plug 'junegunn/vim-easy-align'
 Plug 'pbrisbin/vim-mkdir'

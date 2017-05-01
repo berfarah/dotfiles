@@ -14,10 +14,6 @@ let NERDTreeShowHidden=1
 map <Leader>n <Plug>NERDTreeTabsToggle<CR>
 map <Leader>\ :NERDTreeTabsOpen<CR><c-w>l:NERDTreeTabsFind<CR>
 
-" Vim Tags
-let g:neotags_enabled = 1
-let g:neotags_highlight = 0
-
 " FZF (fuzzy finder)
 " ----------------------------------------------------------------------------
 " options
