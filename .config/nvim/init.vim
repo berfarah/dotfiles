@@ -62,7 +62,7 @@ let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#syntax#min_keyword_length = 3
 let g:deoplete#auto_complete_start_length = 1
 let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['buffer', 'tag', 'file']
+let g:deoplete#sources._ = ['buffer', 'tag', 'file', 'omni', 'ultisnips']
 let deoplete#tag#cache_limit_size = 5000000
 
 " mappings
@@ -115,10 +115,6 @@ map <Leader>l :TestLast<CR>
 "   Theming
 " ============================================================================
 syntax on                                " Syntax on by default
-
-if has('nvim')
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-endif
 
 set termguicolors " this will eventually be added to neovim
 

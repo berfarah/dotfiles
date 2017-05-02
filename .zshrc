@@ -10,7 +10,6 @@ export PATH="$PATH:$SCRIPTS_PATH"
 plugins=(rails osx gitfast)
 source $XDG_CONFIG_HOME/zsh/git.sh
 source $ZSH/oh-my-zsh.sh
-[ -f $XDG_CONFIG_HOME/zsh/work.sh ] && source $XDG_CONFIG_HOME/zsh/work.sh
 
 # Additional aliases
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
@@ -41,8 +40,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)" 2> /dev/null
 
 # Node
-export PATH="$PATH:/usr/local/share/npm/bin"
-export NODE_PATH="/usr/local/lib/node"
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)" 2> /dev/null
 
 # GO
 export GOPATH="$HOME/Code/golang"
