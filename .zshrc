@@ -8,21 +8,14 @@ export PATH="$PATH:$SCRIPTS_PATH"
 
 # Sourcing
 plugins=(rails osx gitfast rake-fast vi-mode)
-source $XDG_CONFIG_HOME/zsh/git.sh
 source $ZSH/oh-my-zsh.sh
+source $XDG_CONFIG_HOME/zsh/git.sh
+source $XDG_CONFIG_HOME/zsh/vim.sh
 
 # Additional aliases
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias resource='source ~/.zshrc'
 alias cdc='cd ~/Code'
-
-# NeoVim
-if [ -f "$(which nvim)" ]; then
-  alias vim="nvim"
-  alias vi="nvim"
-  export VISUAL="nvim"
-  export EDITOR=$VISUAL
-fi
 
 # ripgrep
 unalias rg
