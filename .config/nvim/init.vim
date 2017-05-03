@@ -67,9 +67,9 @@ let deoplete#tag#cache_limit_size = 5000000
 
 " mappings
 inoremap <expr><C-g> deoplete#mappings#undo_completion()
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#mappings#smart_close_popup()."\<C-h>"
 
 " UltiSnips (snippets)
 " ----------------------------------------------------------------------------
@@ -141,6 +141,7 @@ set backspace=indent,eol,start
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set ignorecase                           " Case insensitive matching
 set smartcase                            " Unless we use a capital letter anywhere
+set inccommand=nosplit
 
 " Make it obvious where 80 characters is
 set textwidth=100

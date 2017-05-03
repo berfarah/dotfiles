@@ -7,7 +7,7 @@ SCRIPTS_PATH="$HOME/Code/scripts"
 export PATH="$PATH:$SCRIPTS_PATH"
 
 # Sourcing
-plugins=(rails osx gitfast)
+plugins=(rails osx gitfast rake-fast vi-mode)
 source $XDG_CONFIG_HOME/zsh/git.sh
 source $ZSH/oh-my-zsh.sh
 
