@@ -17,20 +17,14 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Tooling
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'brooth/far.vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'google/vim-searchindex'
-Plug 'junegunn/vim-easy-align'
-Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
 
-" Colorschemes
+" Colorscheme
 Plug 'jdkanani/vim-material-theme'
-Plug 'mhartington/oceanic-next'
-Plug 'rakr/vim-one'
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -49,14 +43,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
-" Sidebar + git status + persistence
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 filetype plugin indent on                   " required!
 call plug#end()

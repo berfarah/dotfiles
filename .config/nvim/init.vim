@@ -11,8 +11,8 @@ source ~/.config/nvim/plug.vim
 let NERDTreeShowHidden=1
 
 " mappings
-map <Leader>n <Plug>NERDTreeTabsToggle<CR>
-map <Leader>\ :NERDTreeTabsOpen<CR><c-w>l:NERDTreeTabsFind<CR>
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>\ :NERDTree<CR><c-w>l:NERDTreeFind<CR>
 
 " FZF (fuzzy finder)
 " ----------------------------------------------------------------------------
