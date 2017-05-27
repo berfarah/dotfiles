@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+default_path="."
+
+find="$1"
+replace="$2"
+path="${3:-$default_path}"
+
+# found="$(rg $find $path)"
+
+# echo $found
+exec /usr/local/bin/rg "$find" "$path"

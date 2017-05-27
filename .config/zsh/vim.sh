@@ -1,3 +1,4 @@
+export KEYTIMEOUT=1
 # Vim mode block cursor
 function zle-keymap-select zle-line-init {
     # change cursor shape in iTerm2

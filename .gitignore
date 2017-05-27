@@ -14,6 +14,8 @@
 /.config/nvim/.init.vim-rplugin~
 /.config/nvim/.netrwhist
 
+/.config/.mono/*
+
 # Ignore ember working files
 /.config/configstore/ember-cli*
 

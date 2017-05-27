@@ -61,9 +61,10 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#syntax#min_keyword_length = 3
 let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['buffer', 'tag', 'file', 'omni', 'ultisnips']
 let deoplete#tag#cache_limit_size = 5000000
+
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 " mappings
 inoremap <expr><C-g> deoplete#mappings#undo_completion()

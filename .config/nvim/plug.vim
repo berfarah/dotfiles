@@ -1,3 +1,4 @@
+
 " ----------------------------------------------------------------------------
 "   Plug
 " ----------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Plug 'w0rp/ale'
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
