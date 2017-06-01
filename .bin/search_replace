@@ -1,12 +1,14 @@
-#!/bin/zsh
+#!/bin/bash
 
 default_path="."
-
 find="$1"
 replace="$2"
 path="${3:-$default_path}"
 
-# found="$(rg $find $path)"
+if [ -z $find -o -z $replace ]; then
+  echo "Usage: $0 [find] [replace]"
+  exit 1
+fi
 
-# echo $found
-exec /usr/local/bin/rg "$find" "$path"
+# Requires `brew install gnu-sed`
+rg -l $DIR | grep -v \' | xargs gsed -b -i "s/${find}/${replace}/g"
