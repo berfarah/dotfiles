@@ -10,6 +10,7 @@ export PATH="$HOME/.bin:$PATH"
 # Sourcing
 plugins=(rails osx gitfast rake-fast vi-mode)
 source $ZSH/oh-my-zsh.sh
+source $HOME/.fzf.zsh
 source $XDG_CONFIG_HOME/zsh/git.sh
 source $XDG_CONFIG_HOME/zsh/vim.sh
 
@@ -42,3 +43,5 @@ export GOPATH="$HOME/Code/golang"
 export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -20,9 +20,9 @@ zle -N zle-keymap-select
 
 bindkey -M vicmd ":" zsh-vim-noop
 bindkey -M vicmd ":q" zsh-vim-exit
-bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "/" fzf-history-widget
 bindkey -M vicmd "?" history-incremental-search-forward
-bindkey -M vicmd "^R" history-incremental-search-backward
+bindkey -M vicmd "^R" fzf-history-widget
 bindkey -M vicmd "G" end-of-history
 bindkey -M vicmd "gg" beginning-of-history
 
