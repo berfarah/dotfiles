@@ -98,7 +98,9 @@ let g:airline_right_sep=' '
 let g:airline_powerline_fonts=0
 
 " Exit terminal with escape
-tnoremap <Leader><Esc> <C-\><C-n>
+if has("nvim")
+  tnoremap <Esc><Esc> <C-\><C-n>
+endif
 
 " VimTest
 " ----------------------------------------------------------------------------
@@ -117,7 +119,9 @@ map <Leader>l :TestLast<CR>
 " ============================================================================
 syntax on                                " Syntax on by default
 
-set termguicolors " this will eventually be added to neovim
+if exists("&termguicolors")
+  set termguicolors
+endif
 
 set background=dark
 colorscheme material-theme
@@ -142,7 +146,9 @@ set backspace=indent,eol,start
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set ignorecase                           " Case insensitive matching
 set smartcase                            " Unless we use a capital letter anywhere
-set inccommand=nosplit
+if exists("&inccommand")
+  set inccommand=nosplit
+endif
 
 " Make it obvious where 80 characters is
 set textwidth=100
