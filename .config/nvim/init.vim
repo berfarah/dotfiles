@@ -96,6 +96,7 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" 
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:airline_powerline_fonts=0
+let g:airline#extension#ale#enabled = 1
 
 " Exit terminal with escape
 if has("nvim")
