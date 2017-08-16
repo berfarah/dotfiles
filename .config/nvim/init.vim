@@ -53,6 +53,8 @@ omap <Leader><Tab> <plug>(fzf-maps-o)
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '⨉'
 let g:ale_sign_warning = '⚠'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {}
 
 " Deoplete (autocomplete)
 " ----------------------------------------------------------------------------
@@ -61,10 +63,8 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#syntax#min_keyword_length = 3
 let g:deoplete#auto_complete_start_length = 1
-let deoplete#tag#cache_limit_size = 5000000
-
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#tag#cache_limit_size = 500000000
+let g:deoplete#max_list = 30
 
 " mappings
 inoremap <expr><C-g> deoplete#mappings#undo_completion()
@@ -99,15 +99,13 @@ let g:airline_powerline_fonts=0
 
 " Exit terminal with escape
 if has("nvim")
-  tnoremap <Esc><Esc> <C-\><C-n>
+  tnoremap <Leader><Esc> <C-\><C-n>
 endif
 
 " VimTest
 " ----------------------------------------------------------------------------
 " options
 let test#strategy = "neovim"
-let g:test#javascript#mocha#executable = "yarn test"
-let g:test#javascript#jest#executable = "yarn test"
 
 " mappings
 map <Leader>t :TestFile<CR>

@@ -6,6 +6,7 @@
 [alias]
   cur = !bash -c '"echo ${GIT_DIR}"'
   aa = !git ls-files -d | xargs -r git rm && git ls-files -m -o --exclude-standard | xargs -r git add
+  fix = "!sh -c '$EDITOR -p `git diff --name-only --diff-filter=U`'"
   aup = "!sh -c 'git ls-files -m | grep $1 | xargs -r git add' -"
   ag = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs -r git add' -"
   agp = "!sh -c 'git ls-files -m -o --exclude-standard | grep $1 | xargs -r git add -p' -"

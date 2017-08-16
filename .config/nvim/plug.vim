@@ -34,7 +34,8 @@ Plug 'janko-m/vim-test'
 Plug 'sheerun/vim-polyglot'
 Plug 'darfink/vim-plist'
 Plug 'rstacruz/sparkup', { 'for': ['html', 'css', 'eruby'] }
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 " Linting
 Plug 'w0rp/ale'

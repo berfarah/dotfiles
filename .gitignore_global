@@ -42,3 +42,5 @@ Thumbs.db
 tags
 tags.temp
 tags.lock
+
+node_modules

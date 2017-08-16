@@ -17,7 +17,8 @@ source $XDG_CONFIG_HOME/zsh/vim.sh
 # Additional aliases
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias resource='source ~/.zshrc'
-alias dev="cd $PROJECTS_PATH"
+alias dev="$PROJECTS_PATH"
+alias l="ls -lahp"
 
 # ripgrep
 unalias rg
