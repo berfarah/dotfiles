@@ -11,4 +11,4 @@ if [ -z $find -o -z $replace ]; then
 fi
 
 # Requires `brew install gnu-sed`
-rg -l $DIR | grep -v \' | xargs gsed -b -i "s/${find}/${replace}/g"
+rg -l $path | grep -v \' | xargs gsed -b -i "s/${find}/${replace}/g"
