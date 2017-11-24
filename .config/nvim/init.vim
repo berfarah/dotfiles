@@ -53,7 +53,7 @@ omap <Leader><Tab> <plug>(fzf-maps-o)
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '⨉'
 let g:ale_sign_warning = '⚠'
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_fixers = {}
 
 " Deoplete (autocomplete)
@@ -235,6 +235,8 @@ nnoremap <down> <C-w>j
 
 command Gcane :!git commit --amend --no-edit %
 command Gadd :!git add %
+
+set scroll=15
 
 " Leader mappings
 " ----------------------------------------------------------------------------
