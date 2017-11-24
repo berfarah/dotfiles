@@ -109,8 +109,8 @@ endif
 let test#strategy = "neovim"
 
 " mappings
-map <Leader>t :TestFile<CR>
-map <Leader>T :TestNearest<CR>
+map <Leader>T :TestFile<CR>
+map <Leader>t :TestNearest<CR>
 map <Leader>l :TestLast<CR>
 
 " ============================================================================
