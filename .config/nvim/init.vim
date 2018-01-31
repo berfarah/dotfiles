@@ -58,21 +58,9 @@ let g:ale_sign_warning = '⚠'
 let g:ale_fix_on_save = 0
 let g:ale_fixers = {}
 
-" Deoplete (autocomplete)
-" ----------------------------------------------------------------------------
-" options
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources#syntax#min_keyword_length = 3
-let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#tag#cache_limit_size = 500000000
-let g:deoplete#max_list = 30
-
 " mappings
-inoremap <expr><C-g> deoplete#mappings#undo_completion()
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
 
 " UltiSnips (snippets)
 " ----------------------------------------------------------------------------

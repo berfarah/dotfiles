@@ -1,8 +1,5 @@
 setlocal ts=4 sts=4 sw=4 noexpandtab listchars=tab:\ \ ,trail:·,nbsp:·
 
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1

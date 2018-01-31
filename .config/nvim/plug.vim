@@ -41,8 +41,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'w0rp/ale'
 
 " Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
+Plug 'roxma/nvim-completion-manager'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
