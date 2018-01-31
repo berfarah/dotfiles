@@ -5,10 +5,10 @@ find="$1"
 replace="$2"
 path="${3:-$default_path}"
 
-if [ -z $find -o -z $replace ]; then
+if [ -z "$find" -o -z "$replace" ]; then
   echo "Usage: $0 [find] [replace]"
   exit 1
 fi
 
 # Requires `brew install gnu-sed`
-rg -l $path | grep -v \' | xargs gsed -b -i "s/${find}/${replace}/g"
+rg -l "$find" $path | grep -v \' | xargs gsed -b -i "s#${find}#${replace}#g"

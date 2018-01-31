@@ -5,6 +5,8 @@ let mapleader = "\<Space>"
 " ============================================================================
 source ~/.config/nvim/plug.vim
 
+set backupskip=/tmp/*,/private/tmp/*
+
 " NERDTree (sidebar)
 " ----------------------------------------------------------------------------
 " options
