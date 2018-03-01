@@ -26,6 +26,7 @@ Plug 'scrooloose/nerdtree'
 
 " Colorscheme
 Plug 'jdkanani/vim-material-theme'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " Testing
 Plug 'janko-m/vim-test'

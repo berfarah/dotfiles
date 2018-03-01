@@ -113,8 +113,8 @@ if exists("&termguicolors")
 endif
 
 set background=dark
-colorscheme material-theme
-let g:airline_theme = 'base16_flat' " Airline
+colorscheme hybrid_material
+let g:airline_theme = 'hybrid' " Airline
 
 " ============================================================================
 "   Settings
