@@ -7,6 +7,7 @@ DOTFILES=`find $DIR \
   -not -name ".gitignore" \
   -not -name "link.sh"\
   -not -name "README.md" \
+  -not -name "tags" \
   -mindepth 1 \
   -maxdepth 1 \
   2>/dev/null`
