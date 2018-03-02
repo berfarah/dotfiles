@@ -10,23 +10,18 @@
 /.config/nvim/.init.vim-rplugin~
 /.config/nvim/.netrwhist
 
-/.config/.mono/*
 
-# Ignore ember working files
-/.config/configstore/ember-cli*
-
-# Ignore ranger working files
-/.config/ranger/*
-
-# Ignore work.sh
-/.config/zsh/work.sh
-
-# Ignore github credentials
+# Ignore some configs
+/.config/.mono
+/.config/codeclimate
+/.config/configstore
 /.config/hub
+/.config/karabiner/assets
+/.config/ranger
+/.config/yarn
 
-/.config/yarn/global/
-/.config/configstore/
+# Ignore secrets
+/.config/zsh/secrets.sh
 
 !.keep
-
 /node_modules
