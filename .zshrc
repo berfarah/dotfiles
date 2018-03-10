@@ -19,11 +19,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)" 2> /dev/null
+eval "$(rbenv init --no-rehash -)" 2> /dev/null
+(rbenv rehash &) 2> /dev/null # background rehash - much faster
 
 # Node
 export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)" 2> /dev/null
+eval "$(nodenv init --no-rehash -)" 2> /dev/null
+(nodenv rehash &) 2> /dev/null # background rehash - much faster
 
 # GO
 export GOPATH="$HOME/dev/golang"
