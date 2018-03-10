@@ -5,16 +5,12 @@ export PROJECTS_PATH="$HOME/dev"
 # Add my scripts to the path
 export PATH="$HOME/.bin:$PATH"
 
-# Sourcing
-source $HOME/.fzf.zsh
-
 # Additional aliases
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias resource='source ~/.bashrc'
 alias dev="cd $PROJECTS_PATH"
 
 # ripgrep
-unalias rg
 alias ag='rg'
 
 # hub
@@ -26,16 +22,16 @@ export FZF_DEFAULT_OPTS='--bind tab:toggle-out,shift-tab:toggle-in,ctrl-a:select
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)" 2> /dev/null
+eval "$(rbenv init --no-rehash -)" 2> /dev/null
+(rbenv rehash &) 2> /dev/null # background rehash - much faster
 
 # Node
 export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)" 2> /dev/null
+eval "$(nodenv init --no-rehash -)" 2> /dev/null
+(nodenv rehash &) 2> /dev/null # background rehash - much faster
 
 # GO
 export GOPATH="$HOME/Code/golang"
 export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
