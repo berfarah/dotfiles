@@ -43,8 +43,6 @@
   added = green bold
   changed = yellow bold
   untracked = red
-[core]
-  excludesfile = /Users/bernardo/.gitignore_global
 
 [diff]
   compactionHeuristic = true
