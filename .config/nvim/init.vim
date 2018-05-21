@@ -59,6 +59,9 @@ let NERDTreeShowHidden=1
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>\ :NERDTree<CR><c-w>l:NERDTreeFind<CR>
 
+" Tag generation
+let g:gutentags_file_list_command = 'rg --files'
+
 " FZF (fuzzy finder)
 " ----------------------------------------------------------------------------
 " options
