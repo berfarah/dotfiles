@@ -12,7 +12,6 @@ plugins=(
   rake-fast
   gitfast
   osx
-  vi-mode
   bernardo
 )
 source $ZSH/oh-my-zsh.sh
