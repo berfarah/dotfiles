@@ -1,8 +1,11 @@
+cask_args appdir: '/Applications'
+tap 'heroku/brew'
+tap 'universal-ctags/universal-ctags'
+
 # =========================================================
 # Customization
 # =========================================================
 # Quicklook extensions
-cask 'betterzipql'
 cask 'qlcolorcode'
 cask 'qlimagesize'
 cask 'qlmarkdown'
@@ -71,6 +74,7 @@ brew 'redis', restart_service: true
 brew 'sqlite'
 
 # Other webdev tools
+cask 'caskroom/versions/java8'
 brew 'elasticsearch', restart_service: true
 
 # =========================================================
@@ -90,7 +94,6 @@ cask 'skype'
 cask 'slack'
 cask 'spotify'
 cask 'transmit'
-cask 'virtualbox'
 cask 'vlc'
 
 mas 'DaisyDisk', id: 411643860
