@@ -1,5 +1,11 @@
 # Bernardo's Dotfiles
 
+Get going quickly by copy-pasting the below into your terminal:
+
+```sh
+bash -c "$(curl -L https://raw.githubusercontent.com/berfarah/dotfiles/master/bin/setup.sh)"
+```
+
 Software used:
 
 1. [Neovim](https://github.com/neovim/neovim)

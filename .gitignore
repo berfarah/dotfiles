@@ -1,27 +1,26 @@
 # Just for the berfarah/dotfiles repo
 
 # Ignore working files for nvim
-/.config/nvim/swap/*
-/.config/nvim/backup/*
-/.config/nvim/undo/*
-/.config/nvim/sessions/*
-/.config/nvim/plugged/
-/.config/nvim/autoload/
-/.config/nvim/.init.vim-rplugin~
-/.config/nvim/.netrwhist
+/home/.config/nvim/swap/*
+/home/.config/nvim/backup/*
+/home/.config/nvim/undo/*
+/home/.config/nvim/sessions/*
+/home/.config/nvim/plugged/
+/home/.config/nvim/autoload/
+/home/.config/nvim/.init.vim-rplugin~
+/home/.config/nvim/.netrwhist
 
 
 # Ignore some configs
-/.config/.mono
-/.config/codeclimate
-/.config/configstore
-/.config/hub
-/.config/karabiner/assets
-/.config/ranger
-/.config/yarn
+/home/.config/.mono
+/home/.config/codeclimate
+/home/.config/configstore
+/home/.config/hub
+/home/.config/karabiner/assets
+/home/.config/ranger
+/home/.config/yarn
 
 # Ignore secrets
-/.config/zsh/secrets.sh
+/home/.config/zsh/secrets.sh
 
 !.keep
-/node_modules
