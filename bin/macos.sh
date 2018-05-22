@@ -61,17 +61,8 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
-# Set Help Viewer windows to non-floating mode
-defaults write com.apple.helpviewer DevMode -bool true
-
 # Restart automatically if the computer freezes
 systemsetup -setrestartfreeze on
-
-# General: enable smart quotes, they're annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# General: enable smart dashes, they're annoying when typing code
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input              #
@@ -79,7 +70,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Trackpad: enable tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # General: enable "natural" (Lion-style) scrolling
@@ -88,41 +78,34 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 # General: Disable cursor magnification on shake (El Capitan+)
 defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool true
 
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-# Enable full keyboard access for all controls
-# (e.g. enable Tab in modal dialogs)
+# Enable full keyboard access for all controls (tab through dialogue)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # General: enable scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-# Follow the keyboard focus while zoomed in
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # General: enable press-and-hold for keys instead of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-# Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # General: automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool false
-# Turn off keyboard illumination when computer is not used for 5 minutes
-defaults write com.apple.BezelServices kDimTime -int 300
 
-# Set language and text formats
-# Note: if you’re in the US, you may replace `EUR` with `USD`, `Centimeters`
-# with `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+# Set localization language and units
 defaults write NSGlobalDomain AppleLanguages -array "en"
 defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleTemperatureUnit -string "Celsius"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # General: enable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool true
+
+# General: disable smart quotes and dashes, they're annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ############################################################################
 # Screen                                                                   #
@@ -134,8 +117,6 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to ~/Desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
 # Enable subpixel font rendering on non-Apple LCDs
@@ -201,33 +182,6 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
-
-# # Show item info near icons on the desktop and in other icon views
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
-
-# # Show item info to the right of the icons on the desktop
-# /usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
-
-# # Enable snap-to-grid for icons on the desktop and in other icon views
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
-# # Increase grid spacing for icons on the desktop and in other icon views
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-
-# # Increase the size of icons on the desktop and in other icon views
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
-
-# Use columns view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `Flwv`
-# defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # General: enable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
@@ -318,24 +272,45 @@ defaults write com.apple.dock wvous-br-corner -int 0
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 ############################################################################
-# Terminal & iTerm 2                                                       #
+# Terminal
 ############################################################################
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# iTerm: enable prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+############################################################################
+# Alfred
+############################################################################
 
-# iTerm: enable native scrolling (for use with MOUSE_REPORTING_NONE)
-# https://filippo.io/native-scrolling-and-iterm2/
-defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
+# Set up sync folder
+defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~/Library/Mobile Documents/com~apple~CloudDocs/Alfred"
+
+############################################################################
+# Magnet
+############################################################################
+
+# Set keyboard mappings for Magnet
+defaults write com.crowdcafe.windowmagnet expandWindowEastComboKey -dict keyCode 124 modifierFlags 1572864
+defaults write com.crowdcafe.windowmagnet expandWindowWestComboKey -dict keyCode 123 modifierFlags 1572864
+defaults write com.crowdcafe.windowmagnet maximizeWindowComboKey -dict keyCode 126 modifierFlags 1572864
+defaults write com.crowdcafe.windowmagnet restoreWindowComboKey -dict keyCode 125 modifierFlags 1572864
+
+############################################################################
+# Dash
+############################################################################
+
+# Set up syncing for Dash
+defaults write com.kapeli.dashdoc.plist syncFolderPath -string "~/Library/Mobile Documents/com~apple~CloudDocs"
+defaults write com.kapeli.dashdoc.plist shouldSyncBookmarks -bool true
+defaults write com.kapeli.dashdoc.plist shouldSyncDocsets -bool true
+defaults write com.kapeli.dashdoc.plist shouldSyncGeneral -bool true
+defaults write com.kapeli.dashdoc.plist shouldSyncView -bool true
 
 ############################################################################
 # Kill affected applications                                               #
 ############################################################################
 
-for app in "Dock" "Finder" "SystemUIServer" "iCal"; do
+for app in "Dock" "Finder" "SystemUIServer" "iCal" "Alfred" "Magnet" "Dash"; do
     killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

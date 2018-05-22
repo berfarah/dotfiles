@@ -40,36 +40,9 @@ nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
 yarn global add eslint typescript
 
-# =======================================
-# Settings
-# =======================================
-
-# iTerm
 echo "Copying over old preferences"
 chmod 0600 ./plists/*
 cp -R ./plists/ ~/Library/Preferences/
-
-# Alfred (enable sync)
-echo "Configuring Alfred"
-killall Alfred &> /dev/null
-defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~/Library/Mobile Documents/com~apple~CloudDocs/Alfred"
-
-# Magnet (konfigure keyboard shortcuts)
-echo "Configuring Magnet"
-killall Magnet &> /dev/null
-defaults write com.crowdcafe.windowmagnet expandWindowEastComboKey -dict keyCode 124 modifierFlags 1572864
-defaults write com.crowdcafe.windowmagnet expandWindowWestComboKey -dict keyCode 123 modifierFlags 1572864
-defaults write com.crowdcafe.windowmagnet maximizeWindowComboKey -dict keyCode 126 modifierFlags 1572864
-defaults write com.crowdcafe.windowmagnet restoreWindowComboKey -dict keyCode 125 modifierFlags 1572864
-
-# Dash (enable sync)
-echo "Configuring Dash"
-killall Dash &> /dev/null
-defaults write com.kapeli.dashdoc.plist syncFolderPath -string "~/Library/Mobile Documents/com~apple~CloudDocs"
-defaults write com.kapeli.dashdoc.plist shouldSyncBookmarks -bool true
-defaults write com.kapeli.dashdoc.plist shouldSyncDocsets -bool true
-defaults write com.kapeli.dashdoc.plist shouldSyncGeneral -bool true
-defaults write com.kapeli.dashdoc.plist shouldSyncView -bool true
 
 # Set a bunch of settings
 ./bin/macos.sh
