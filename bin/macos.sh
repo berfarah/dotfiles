@@ -21,27 +21,22 @@ fi
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Restart automatically if the computer freezes
+sudo systemsetup -setrestartfreeze on
+
 # Dark mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
-# Check for software updates daily instead of weekly
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-# Download newly available updates in background
-defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
-
-# Install System data files & security updates
-defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
-
 # Turn on app auto-update
-defaults write com.apple.commerce AutoUpdate -bool true
+sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
-# Menu bar: show remaining battery time (on pre-10.8); hide percentage
+# Menu bar: show remaining battery time; hide percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 # General: Enable save documents to iCloud
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -54,9 +49,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
-
-# Restart automatically if the computer freezes
-systemsetup -setrestartfreeze on
 
 ############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input              #
@@ -105,10 +97,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Screen                                                                   #
 ############################################################################
 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 # Save screenshots to ~/Desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 defaults write com.apple.screencapture type -string "png"
@@ -124,7 +112,7 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder QuitMenuItem -bool false
 
 # Finder: disable window and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool false
@@ -152,9 +140,6 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Finder: display full path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
-
-# Keep folders on top when sorting by name
-defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -195,7 +180,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ############################################################################
 
 # Set the icon size of Dock items to 48 pixels
-defaults write com.apple.dock tilesize -int 48
+defaults write com.apple.dock tilesize -int 28
 
 # Dock: enable magnification
 defaults write com.apple.dock magnification -bool false
@@ -214,10 +199,6 @@ defaults write com.apple.dock launchanim -bool true
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
-
-# Don’t group windows by application in Mission Control
-# (i.e. use the old Exposé behavior instead)
-defaults write com.apple.dock expose-group-by-app -bool false
 
 # General: enable Dashboard as a space
 defaults write com.apple.dock dashboard-in-overlay -bool false
@@ -256,7 +237,7 @@ find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 defaults write com.apple.dock wvous-tl-corner -int 0
 defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 12
+defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Mission Control
 defaults write com.apple.dock wvous-bl-corner -int 0
