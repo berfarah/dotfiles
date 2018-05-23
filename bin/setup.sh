@@ -9,19 +9,16 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-echo "Installing dev tools"
-xcode-select --install
+echo "Installing Homebrew"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Gathering dependencies"
 mkdir -p $HOME/dev/berfarah
-git clone git@github.com:berfarah/dotfiles.git $HOME/dev/berfarah/dotfiles
+git clone https://github.com/berfarah/dotfiles.git $HOME/dev/berfarah/dotfiles
 cd $HOME/dev/berfarah/dotfiles
 
 echo "Installing Oh-My-Zsh"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-echo "Installing Homebrew"
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Installing homebrew dependencies"
 brew bundle
