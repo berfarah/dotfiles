@@ -2,15 +2,20 @@
 
 RUBY_VERSION="2.5.0"
 NODE_VERSION="8.9.4"
-DOTFILES_DIR="$HOME/dev/berfarah/dotfiles"
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Installing dev tools"
 xcode-select --install
 
 echo "Gathering dependencies"
-mkdir -p $DOTFILES_DIR
-curl -sL https://github.com/berfarah/dotfiles/archive/master.tar.gz | tar -xz -C $DOTFILES_DIR --strip-components=1
-cd $DOTFILES_DIR
+mkdir -p $HOME/dev/berfarah
+git clone git@github.com:berfarah/dotfiles.git $HOME/dev/berfarah/dotfiles
+cd $HOME/dev/berfarah/dotfiles
 
 echo "Installing Oh-My-Zsh"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
