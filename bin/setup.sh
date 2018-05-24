@@ -46,7 +46,7 @@ echo "Copying over old preferences"
 chmod 0600 ./plists/*
 cp -R ./plists/ ~/Library/Preferences/
 
-# Set a bunch of settings
-./bin/macos.sh
+echo "Configuring miscellaneous mac settings"
+./bin/configure.sh
 
 echo "Done!"
