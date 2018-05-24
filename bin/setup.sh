@@ -15,7 +15,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo "Gathering dependencies"
 mkdir -p $HOME/dev/berfarah
 git clone https://github.com/berfarah/dotfiles.git $HOME/dev/berfarah/dotfiles
-cd $HOME/dev/berfarah/dotfiles
+cd $HOME/dev/berfarah/dotfiles && git pull
 
 echo "Installing Oh-My-Zsh"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -31,7 +31,7 @@ echo "Symlinking dotfiles"
 
 echo "Setting up Ruby"
 eval "$(rbenv init -)" 2> /dev/null
-git clone git://github.com/tpope/rbenv-ctags.git ~/.rbenv/plugins/rbenv-ctags
+git clone git://github.com/tpope/rbenv-ctags.git ~/.rbenv/plugins/rbenv-ctags 2>/dev/null
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 gem install --conservative gem-ctags bundler rubocop
