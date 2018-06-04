@@ -12,6 +12,9 @@ cask 'quicklook-csv'
 cask 'quicklook-json'
 cask 'webpquicklook'
 
+tap 'caskroom/fonts'
+cask 'font-source-code-pro'
+
 # =========================================================
 # Development
 # =========================================================
@@ -34,6 +37,7 @@ brew 'heroku/brew/heroku'
 brew 'htop'
 brew 'httpie'
 brew 'hub'
+cask 'karabiner-elements'
 brew 'neovim'
 system 'pip3 install neovim'
 brew 'p7zip'
@@ -68,11 +72,13 @@ brew 'elasticsearch', restart_service: :changed
 # =========================================================
 # Applications
 # =========================================================
+tap 'caskroom/versions'
 cask 'alfred'
 cask 'bartender'
 cask 'dash'
 cask 'dashlane'
 cask 'firefox'
+cask 'firefox-developer-edition'
 cask 'flux'
 cask 'google-chrome'
 cask 'iterm2'
