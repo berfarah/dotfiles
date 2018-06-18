@@ -128,10 +128,12 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" 
 
 " Airline (status bar)
 " ----------------------------------------------------------------------------
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 let g:airline_powerline_fonts=0
 let g:airline#extension#ale#enabled = 1
+let g:airline_detect_paste=1
+let g:airline#extensions#branch#enabled = 1
 
 " Exit terminal with escape
 if has("nvim")
@@ -158,6 +160,9 @@ if exists("&termguicolors")              " True colors
 endif
 
 set background=dark
+let g:hybrid_transparent_background = 1
+let g:enable_italic_font = 1
+let g:enable_bold_font = 1
 colorscheme hybrid_material
 let g:airline_theme = 'hybrid' " Airline
 
