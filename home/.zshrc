@@ -9,6 +9,7 @@ export PATH="$HOME/.bin:$PATH"
 
 # Sourcing
 plugins=(
+  golang
   rake-fast
   gitfast
   osx

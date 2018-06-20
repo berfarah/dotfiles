@@ -33,7 +33,7 @@ Plug 'darfink/vim-plist'
 Plug 'rstacruz/sparkup', { 'for': ['html', 'css', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'mhartington/nvim-typescript', { 'do': 'npm install -g typescript', 'for': 'typescript' }
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh'}
 
 " Linting
 Plug 'w0rp/ale'
@@ -258,6 +258,9 @@ map <Leader>cf :let @* = expand("%")<CR>
 " Get full directory of buffer
 map <Leader>cdd :let @* = expand("%:p:h")<CR>
 map <Leader>cd :let @* = expand("%:h")<CR>
+
+nmap <silent> <Leader>aj <Plug>(ale_next_wrap)
+nmap <silent> <Leader>ak <Plug>(ale_previous_wrap)
 
 " Remove highlight
 map <Leader>h :noh<CR>
