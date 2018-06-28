@@ -34,7 +34,7 @@ Plug 'darfink/vim-plist'
 Plug 'rstacruz/sparkup', { 'for': ['html', 'css', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh'}
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': 'typescript' }
 
 " Linting
 Plug 'w0rp/ale'
