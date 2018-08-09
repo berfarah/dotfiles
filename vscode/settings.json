@@ -1,0 +1,51 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "vim.enableNeovim": true,
+    "vim.foldfix": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "\\"],
+            "commands": ["workbench.files.action.showActiveFileInExplorer"]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "commands": [":noh"]
+        }
+    ],
+    "window.nativeTabs": false,
+    "search.smartCase": true,
+    "terminal.external.osxExec": "iTerm2.app",
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+    "searchRipgrep.enable": true,
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": false
+    },
+    "editor.acceptSuggestionOnEnter": "smart",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.gitExplorer.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.blame.heatmap.enabled": false,
+    "gitlens.hovers.currentLine.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "git.autofetch": true,
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.activityBar.visible": false,
+    "gitlens.historyExplorer.enabled": false,
+    "go.gotoSymbol.includeGoroot": true,
+    "go.gotoSymbol.includeImports": true,
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "workbench.colorTheme": "Atom Material Theme",
+    "editor.fontFamily": "'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+    "editor.snippetSuggestions": "top"
+}
