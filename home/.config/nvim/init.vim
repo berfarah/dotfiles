@@ -20,7 +20,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'google/vim-searchindex'
 Plug 'tpope/vim-commentary' | Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
-Plug 'mhinz/vim-grepper'
+Plug 'eugen0329/vim-esearch'
 
 " Colorscheme
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -93,9 +93,12 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 
 " mappings
 nnoremap <C-p> :FZF<CR>
-nnoremap <C-f> :Grepper -tool rg -side<CR>
+call esearch#map('<C-f>', 'esearch')
 nnoremap <Leader>b :Buffers<CR>
 nnoremap gst :GFiles?<CR>
+if !exists('g:esearch') | let g:esearch = {} | endif
+let g:esearch.backend = 'nvim'
+let g:esearch.adapter = 'rg'
 
 " Ale (linter)
 " ----------------------------------------------------------------------------
