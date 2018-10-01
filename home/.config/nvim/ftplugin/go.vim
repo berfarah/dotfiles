@@ -17,3 +17,6 @@ let g:go_auto_type_info = 1
 map <Leader>t :GoTest<CR>
 
 compiler go
+
+" Prevent vim-go from overwriting vim-godebug's commands
+command! -nargs=* -bang GoDebugStart call godebug#debug(<bang>0, 0, <f-args>)
