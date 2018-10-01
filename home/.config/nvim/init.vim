@@ -28,20 +28,34 @@ Plug 'kristijanhusak/vim-hybrid-material'
 " Testing
 Plug 'janko-m/vim-test'
 
+Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'Quramy/vison', { 'for': 'json', 'do': ':VisonSetup' }
+
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'darfink/vim-plist'
 Plug 'rstacruz/sparkup', { 'for': ['html', 'css', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+Plug 'jodosha/vim-godebug', { 'for': 'go' }
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh', 'for': 'typescript' }
 
 " Linting
 Plug 'w0rp/ale'
 
 " Autocomplete
-Plug 'roxma/nvim-completion-manager', { 'do': ':UpdateRemotePlugins' }
+Plug 'ncm2/ncm2', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-yarp'
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
 Plug 'honza/vim-snippets' | Plug 'SirVer/ultisnips'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-github', { 'for': ['markdown', 'gitcommit'] }
+Plug 'ncm2/ncm2-markdown-subscope', { 'for': 'markdown' }
+Plug 'ncm2/ncm2-go', { 'for': 'go' }
+Plug 'ncm2/ncm2-ultisnips'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -59,6 +73,9 @@ let NERDTreeShowHidden=1
 " mappings
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>\ :NERDTree<CR><c-w>l:NERDTreeFind<CR>
+
+set foldmethod=syntax
+set foldlevelstart=99
 
 " Tag generation
 let g:gutentags_file_list_command = 'rg --files'
