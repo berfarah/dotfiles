@@ -19,6 +19,7 @@
 /home/.config/karabiner/assets
 /home/.config/ranger
 /home/.config/yarn
+/home/.config/htop
 
 # Ignore secrets
 /home/.config/zsh/secrets.sh
