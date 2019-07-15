@@ -1,1 +1,1 @@
-command! Format :%!python -m json.tool
+autocmd FileType json syntax match Comment +\/\/.\+$+

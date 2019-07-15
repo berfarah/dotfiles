@@ -20,6 +20,7 @@
 /home/.config/ranger
 /home/.config/yarn
 /home/.config/htop
+/home/.config/coc
 
 # Ignore secrets
 /home/.config/zsh/secrets.sh
