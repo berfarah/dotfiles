@@ -46,3 +46,4 @@ tags.lock
 node_modules
 
 .wip
+.vim

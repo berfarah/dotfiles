@@ -21,6 +21,7 @@
 /home/.config/yarn
 /home/.config/htop
 /home/.config/coc
+/home/.config/direnv
 
 # Ignore secrets
 /home/.config/zsh/secrets.sh

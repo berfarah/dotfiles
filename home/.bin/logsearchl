@@ -1,0 +1,3 @@
+#!/bin/bash
+
+logsearch "$@" | awk -F': ' '{$1=""; print $0}' | jq -C . | less -C

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 [start] [?experiment]"
+  exit 1
+fi
+
+logsearch \
+  --start "$1" \
+  --filter="{ experiment = ${2:-*} }" \
+  clouddriverserver \
+  cloudserver \
+  apiserver \
+  businessmetrics \
+  dailystats \
+  scheduledreportsworker \
+  eldworker \
+  hosmailworker \
+  stats_worker \
+  > "experiment.$1-`date -u +'%Y-%m-%dT%TZ'`.log"

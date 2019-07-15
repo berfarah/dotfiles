@@ -1,5 +1,5 @@
 [user]
-  email = ber@bernardo.me
+  email = bernardo.farah@samsara.com
   name = Bernardo Farah
 [push]
   default = simple
@@ -55,3 +55,10 @@
 	rebase = true
 [rebase]
   autosquash = true
+[merge "ours"]
+	driver = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

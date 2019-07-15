@@ -12,6 +12,8 @@ function zle-keymap-select zle-line-init {
     zle -R
 }
 
+export PAGER=/usr/local/Cellar/less/530/bin/less
+
 autoload -Uz edit-command-line
 zsh-vim-noop () {}
 zsh-vim-exit() { exit }

@@ -16,10 +16,10 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 " Tooling
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'google/vim-searchindex'
 Plug 'tpope/vim-commentary' | Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
+" try this instead maybe https://github.com/dyng/ctrlsf.vim
 Plug 'eugen0329/vim-esearch'
 
 " Colorscheme
@@ -66,9 +66,6 @@ map <Leader>\ :NERDTree<CR><c-w>l:NERDTreeFind<CR>
 
 set foldmethod=syntax
 set foldlevelstart=99
-
-" Tag generation
-let g:gutentags_file_list_command = 'rg --files'
 
 " FZF (fuzzy finder)
 " ----------------------------------------------------------------------------
