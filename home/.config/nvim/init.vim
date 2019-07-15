@@ -106,6 +106,8 @@ nnoremap gst :GFiles?<CR>
 if !exists('g:esearch') | let g:esearch = {} | endif
 let g:esearch.backend = 'nvim'
 let g:esearch.adapter = 'rg'
+let g:esearch.regex = 1
+let g:esearch.case = 1
 
 " Ale (linter)
 " ----------------------------------------------------------------------------
