@@ -36,7 +36,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'darfink/vim-plist'
 Plug 'rstacruz/sparkup', { 'for': ['html', 'css', 'eruby'] }
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'jodosha/vim-godebug', { 'for': 'go' }
 
 " Linting
@@ -139,6 +139,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <C-]> <Plug>(coc-definition)
+nmap <silent> <C-w><C-]> :<C-U>call CocAction('jumpDefinition', 'split')<CR>
+nmap <silent> <C-w>] :<C-U>call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
