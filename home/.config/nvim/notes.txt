@@ -1,9 +1,0 @@
-Plugins that are cool but I'm not using:
-
-## Color schemes
-
-Plug 'raphamorim/lucario'
-Plug 'jacoborus/tender'
-Plug 'w0ng/vim-hybrid'
-Plug 'mhartington/oceanic-next'
-Plug 'rakr/vim-one'

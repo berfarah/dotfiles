@@ -37,3 +37,6 @@ map("n", "<Leader>ak", "<Plug>(ale_previous_wrap)")
 
 -- Remove highlight
 map("", "<Leader>h", ":noh<CR>")
+
+-- Open current file in GitHub
+map("", "<Leader>gh", ":OpenGithubFile<CR>")
