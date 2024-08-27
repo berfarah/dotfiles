@@ -16,7 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 -- Tooling
-Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/opt/fzf'
 Plug('junegunn/fzf.vim', {['do'] = vim.fn['fzf#install']})
 Plug 'google/vim-searchindex'
 Plug 'tpope/vim-commentary'

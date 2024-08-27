@@ -22,10 +22,9 @@ require("nvim-tree").setup({
     },
 })
 
-local nt_api = require("nvim-tree.api")
-local nt = require("nvim-tree")
+local api = require("nvim-tree.api")
 
-vim.keymap.set("n", "<leader>n", nt_api.tree.toggle)
+vim.keymap.set("n", "<leader>n", api.tree.toggle)
 vim.keymap.set("n", "<leader>\\", (function()
-  nt.find_file(true)
+  api.tree.toggle({find_file = true})
 end))

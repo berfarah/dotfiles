@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 })
 
 -- Find root git directory for relative file links
-local root_dir = lspconfig.util.find_git_ancestor(vim.fn.getcwd())
+local root_dir = lspconfig.util.find_git_ancestor(vim.fn.getcwd()) or ""
 
 -- Installed via `npm i -g vscode-langservers-extracted`
 lspconfig.jsonls.setup({

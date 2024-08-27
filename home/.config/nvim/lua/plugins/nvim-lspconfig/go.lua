@@ -1,6 +1,7 @@
 local util = require "lspconfig/util"
 local org_imports = function()
-  local clients = vim.lsp.buf_get_clients()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_clients({buffer=bufnr})
   for _, client in pairs(clients) do
 
     local params = vim.lsp.util.make_range_params(nil, client.offset_encoding)
@@ -29,7 +30,7 @@ lspconfig.gopls.setup({
         pattern = "*.go",
         callback = function()
           org_imports()
-          vim.lsp.buf.formatting_sync()
+          vim.lsp.buf.format({async=false})
         end
     })
     lspconfig.util.default_config.on_attach()
@@ -38,8 +39,6 @@ lspconfig.gopls.setup({
     gopls = {
       ["local"] = "samsaradev.io",
       staticcheck = false,
-      experimentalWorkspaceModule = true,
-      experimentalUseInvalidMetadata = true,
       usePlaceholders = true,
       memoryMode = "DegradeClosed",
       codelenses = {
