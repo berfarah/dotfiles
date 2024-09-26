@@ -2,6 +2,7 @@ XDG_CONFIG_HOME=$HOME/.config
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="geometry"
 ZSH_CUSTOM=$XDG_CONFIG_HOME/zsh
+eval $(/opt/homebrew/bin/brew shellenv)
 
 # Add my scripts to the path
 export PROJECTS_PATH="$HOME/dev"
@@ -12,7 +13,7 @@ plugins=(
   golang
   rake-fast
   gitfast
-  osx
+  macos
   bernardo
 )
 source $ZSH/oh-my-zsh.sh
