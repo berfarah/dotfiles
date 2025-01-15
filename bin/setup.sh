@@ -12,9 +12,6 @@ mkdir -p $HOME/dev/berfarah
 git clone https://github.com/berfarah/dotfiles.git $HOME/dev/berfarah/dotfiles
 cd $HOME/dev/berfarah/dotfiles && git pull
 
-echo "Installing Oh-My-Zsh"
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
 # ========
 printf "Detecting OS... "
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -31,7 +28,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   cp -R ./plists/ ~/Library/Preferences/
 
   echo "Configuring miscellaneous mac settings"
-  ./bin/configure.sh
+  $HOME/dev/berfarah/dotfiles/bin/configure.sh
 
   echo "Installing FZF shell extensions"
   /usr/local/opt/fzf/install
@@ -39,12 +36,15 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   print "linux!"
 
   echo "Installing Linux apps"
-  ./bin/linux-install.sh
+  $HOME/dev/berfarah/dotfiles/bin/linux-install.sh
 else
   echo "Unsupported OS: $OSTYPE, exiting"
 fi
 
+echo "Installing Oh-My-Zsh"
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
 echo "Symlinking dotfiles"
-./bin/link.sh
+$HOME/dev/berfarah/dotfiles/bin/link.sh
 
 echo "Done!"

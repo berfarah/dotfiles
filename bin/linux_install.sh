@@ -5,14 +5,16 @@ echo "$(dirname "$0")/select.sh"
 source "$(dirname "$0")/select.sh"
 
 echo "Installing defaults:"
-sudo apt install fzf \
-                 ripgrep \
-                 htop \
-                 tree \
-                 tmux \
-                 curl \
-                 ca-certificates \
-                 wget
+sudo apt install -y fzf \
+                    ripgrep \
+                    htop \
+                    tree \
+                    tmux \
+                    curl \
+                    ca-certificates \
+                    wget \
+                    make \
+                    zsh
 
 OPTIONS_VALUES=(go   node neovim docker)
 DEFAULTS=(      true true true   true)
@@ -22,14 +24,15 @@ for i in "${!OPTIONS_VALUES[@]}"; do
 done
 
 prompt_for_multiselect SELECTED "$(IFS=';' ; echo "${OPTIONS_VALUES[*]}")" "$(IFS=';' ; echo "${DEFAULTS[*]}")"
+CHECKED=$(is_selected "${OPTIONS_VALUES[*]}" "${SELECTED[*]}")
 
-if [[ " ${SELECTED[@]} " =~ " go " ]]; then
+if [[ " ${CHECKED[@]} " =~ " go " ]]; then
   sudo add-apt-repository ppa:longsleep/golang-backports
   sudo apt update
-  sudo apt install golang-go
+  sudo apt install -y golang-go
 fi
 
-if [[ " ${SELECTED[@]} " =~ " node " ]]; then
+if [[ " ${CHECKED[@]} " =~ " node " ]]; then
   git clone https://github.com/nodenv/nodenv.git ~/.nodenv
   cd ~/.nodenv && src/configure && make -C src
 
@@ -48,15 +51,13 @@ if [[ " ${SELECTED[@]} " =~ " node " ]]; then
   npm install -g --silent yarn
 fi
 
-if [[ " ${SELECTED[@]} " =~ " neovim " ]]; then
+if [[ " ${CHECKED[@]} " =~ " neovim " ]]; then
   sudo add-apt-repository ppa:neovim-ppa/unstable
   sudo apt update
-  sudo apt install neovim python3
-
-  pip3 install neovim
+  sudo apt install -y neovim python3 python3-pip python3-neovim
 fi
 
-if [[ " ${SELECTED[@]} " =~ " docker " ]]; then
+if [[ " ${CHECKED[@]} " =~ " docker " ]]; then
   sudo install -m 0755 -d /etc/apt/keyrings
   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
   sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -68,5 +69,5 @@ if [[ " ${SELECTED[@]} " =~ " docker " ]]; then
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   sudo apt-get update
 
-  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
