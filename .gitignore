@@ -16,7 +16,9 @@
 /home/.config/codeclimate
 /home/.config/configstore
 /home/.config/hub
+/home/.config/iterm2
 /home/.config/karabiner/assets
+/home/.config/karabiner/automatic_backups/
 /home/.config/ranger
 /home/.config/yarn
 /home/.config/htop
