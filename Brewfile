@@ -29,63 +29,39 @@ brew 'wget'
 # Development tools
 cask 'aws-vault'
 brew 'bcrypt'
-brew 'chamber'
 brew 'fzf'
 brew 'git'
-tap 'heroku/brew'
-brew 'heroku/brew/heroku'
 brew 'htop'
-brew 'httpie'
-brew 'hub'
 cask 'karabiner-elements'
 brew 'neovim'
 system 'pip3 install neovim'
 brew 'p7zip'
 brew 'ripgrep'
-brew 'tig'
 brew 'tree'
-tap 'universal-ctags/universal-ctags'
-brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
 brew 'watchman'
-
-# Libraries
-brew 'imagemagick', args: ['with-libtiff', 'with-little-cms', 'with-ghostscript']
+brew 'gh'
 
 # Languages
 brew 'go'
-brew 'dep'
 brew 'nodenv'
 brew 'python'
-brew 'rbenv'
 brew 'yarn', args: ['without-node']
-
-# Databases
-brew 'mysql', restart_service: :changed
-brew 'postgresql', restart_service: :changed
-brew 'redis', restart_service: :changed
 
 # Tools that require passwords
 cask 'docker-toolbox'
 cask 'caskroom/versions/java8'
-brew 'elasticsearch', restart_service: :changed
 
 # =========================================================
 # Applications
 # =========================================================
-tap 'caskroom/versions'
 cask 'alfred'
-cask 'bartender'
-cask 'dash'
-cask 'dashlane'
-cask 'firefox'
-cask 'firefox-developer-edition'
-cask 'flux'
-cask 'google-chrome'
 cask 'iterm2'
-cask 'keepingyouawake'
 cask 'paw'
-cask 'slack'
 cask 'spotify'
+cask 'elgato-wave-link'
+cask 'elgato-stream-deck'
+cask 'elgato-control-center'
+cask 'rectangle' # replacement for spectacle
 
 mas 'DaisyDisk', id: 411643860
 mas 'Fantastical 2', id: 975937182
