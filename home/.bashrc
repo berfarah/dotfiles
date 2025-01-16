@@ -20,11 +20,6 @@ alias git=hub
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_DEFAULT_OPTS='--bind tab:toggle-out,shift-tab:toggle-in,ctrl-a:select-all,ctrl-d:deselect-all'
 
-# Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init --no-rehash -)" 2> /dev/null
-(rbenv rehash &) 2> /dev/null # background rehash - much faster
-
 # Node
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init --no-rehash -)" 2> /dev/null

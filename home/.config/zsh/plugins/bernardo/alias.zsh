@@ -2,7 +2,6 @@ alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias resource='source ~/.zshrc'
 alias dev="$PROJECTS_PATH"
 alias l="ls -lahp"
-alias git=hub
 function knoch-cd() {
   cd $(knoch show "$@")
 }
