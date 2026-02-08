@@ -36,10 +36,8 @@ vim.lsp.config('gopls', {
   end,
   settings = {
     gopls = {
-      ["local"] = "samsaradev.io",
       staticcheck = false,
       usePlaceholders = true,
-      memoryMode = "DegradeClosed",
       codelenses = {
         gc_details = false,
         generate = false,
