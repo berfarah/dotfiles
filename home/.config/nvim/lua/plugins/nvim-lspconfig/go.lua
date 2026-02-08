@@ -33,7 +33,6 @@ vim.lsp.config('gopls', {
           vim.lsp.buf.format({async=false})
         end
     })
-    vim.lsp.util.default_config.on_attach()
   end,
   settings = {
     gopls = {
