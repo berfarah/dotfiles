@@ -4,7 +4,7 @@ vim.g.completion_matching_strategy_list = {"exact", "substring", "fuzzy"}
 
 vim.lsp.config('*', {
   flags = {debounce_text_changes = 150},
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  capabilities = require('blink.cmp').get_lsp_capabilities(),
 })
 
 require('plugins/nvim-lspconfig.go')

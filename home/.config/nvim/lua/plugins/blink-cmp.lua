@@ -1,58 +1,34 @@
 -- Set max height of suggestion window
 vim.opt.pumheight = 15
 
-local cmp = require('cmp')
-
-local select_opts = {behavior = cmp.SelectBehavior.Select}
-
-if not cmp then return end
-
-local luasnip = require('luasnip')
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
+require('blink.cmp').setup({
   completion = {
-    keyword_length = 2,
+    keyword = { range = 'prefix' },
+    list = {
+      selection = { preselect = true, auto_insert = false },
+    },
+    documentation = { auto_show = true },
   },
-  mapping = {
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
-    ['<Down>'] = cmp.mapping.select_next_item(select_opts),
-    ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
-    ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
 
-  },
+  signature = { enabled = true },
+
   sources = {
-    { name = 'nvim_lsp'},
-    { name = 'buffer' },
-    { name = 'luasnip', max_item_count = 5 },
-    { name = 'path' },
-  }
+    default = { 'lsp', 'buffer', 'path', 'snippets' },
+  },
+
+  keymap = {
+    ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+    ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+    ['<CR>'] = { 'accept', 'fallback' },
+    ['<C-Space>'] = { 'show' },
+    ['<C-e>'] = { 'hide' },
+    ['<C-d>'] = { 'scroll_documentation_down' },
+    ['<C-f>'] = { 'scroll_documentation_up' },
+    ['<Up>'] = { 'select_prev', 'fallback' },
+    ['<Down>'] = { 'select_next', 'fallback' },
+    ['<C-p>'] = { 'select_prev', 'fallback' },
+    ['<C-n>'] = { 'select_next', 'fallback' },
+  },
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {

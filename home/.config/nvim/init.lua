@@ -4,7 +4,7 @@ require('core/options')
 require('core/keybinds')
 require('core/colors')
 
-require('plugins/nvim-cmp')
+require('plugins/blink-cmp')
 require('plugins/nvim-lspconfig')
 require('plugins/nvim-tree')
 require('plugins/airline')

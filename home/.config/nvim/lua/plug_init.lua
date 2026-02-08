@@ -33,14 +33,7 @@ Plug 'dense-analysis/ale'
 Plug 'neovim/nvim-lspconfig'
 
 -- Autocomplete
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/nvim-cmp'
-
--- Snippets
-Plug 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-Plug 'L3MON4D3/LuaSnip' -- Snippets plugin
+Plug('saghen/blink.cmp', {tag = '*'})
 
 -- Git
 Plug 'lewis6991/gitsigns.nvim'

@@ -13,6 +13,7 @@ if !ENV["ENABLE_QUICKLOOK"].nil?
 end
 
 cask 'font-source-code-pro'
+cask 'font-sauce-code-pro-nerd-font'
 
 # =========================================================
 # Development
