@@ -10,8 +10,6 @@ export PATH="$HOME/.bin:$PATH"
 
 # Sourcing
 plugins=(
-  golang
-  rake-fast
   gitfast
   macos
   bernardo
@@ -25,4 +23,4 @@ eval "$(nodenv init --no-rehash -)" 2> /dev/null
 
 # GO
 export GOPATH="$HOME/dev/golang"
-export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="$GOPATH/bin:$PATH"
