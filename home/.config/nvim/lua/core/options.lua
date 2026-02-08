@@ -16,7 +16,6 @@ vim.opt.ignorecase = true                           -- Case insensitive matching
 vim.opt.smartcase = true                           -- Unless we use a capital letter anywhere
 vim.opt.textwidth = 100                        -- Wrap text after N chars
 vim.opt.colorcolumn = "101"                       -- Highlight column after text width
-vim.opt.lazyredraw = true                           -- Don't update the screen during macros
 vim.opt.incsearch = true                           -- Highlight while searching
 vim.opt.hlsearch = true                            -- Highlight after entering search
 vim.opt.splitbelow = true                          -- Horizontal split below
@@ -40,7 +39,6 @@ vim.opt.undofile = true
 
 -- Indentation
 -- ----------------------------------------------------------------------------
-vim.cmd("filetype plugin indent on")
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true

@@ -3,7 +3,7 @@ vim.cmd([[
 if empty(glob("~/.config/nvim/autoload/plug.vim"))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source ~/.config/nvim/init.vim
+  autocmd VimEnter * PlugInstall | source ~/.config/nvim/init.lua
 endif
 ]])
 
@@ -52,5 +52,4 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
 
-vim.cmd("filetype plugin indent on") -- required!
 vim.call("plug#end")
