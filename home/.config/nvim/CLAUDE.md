@@ -43,7 +43,7 @@ This is a Neovim (0.11+) configuration written entirely in Lua. It is part of a 
 | Linting | ALE (fix-on-save enabled; fixers configured per-filetype in `ftplugin/`) |
 | File tree | `nvim-tree` |
 | Git | `gitsigns.nvim` (inline blame), `open-browser-github.vim` |
-| Editing | `vim-surround`, `vim-polyglot` |
+| Editing | `vim-surround`, `nvim-treesitter` |
 
 ### Conventions
 

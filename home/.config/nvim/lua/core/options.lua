@@ -22,7 +22,8 @@ vim.opt.splitbelow = true                          -- Horizontal split below
 vim.opt.splitright = true                          -- Vertical split right
 vim.opt.inccommand = "nosplit"  -- Execute search/replace as you're typing
 
-vim.opt.foldmethod = "syntax"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevelstart = 99
 
 -- Undo / Backup / Swap file locations

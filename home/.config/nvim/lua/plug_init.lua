@@ -23,7 +23,7 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'eugen0329/vim-esearch'
 
 -- Syntax
-Plug 'sheerun/vim-polyglot'
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug 'darfink/vim-plist'
 
 -- Linting
