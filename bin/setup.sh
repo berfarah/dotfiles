@@ -15,7 +15,7 @@ cd $HOME/dev/berfarah/dotfiles && git pull
 # ========
 printf "Detecting OS... "
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  print "macos!"
+  echo "macos!"
 
   echo "Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -31,9 +31,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   $HOME/dev/berfarah/dotfiles/bin/configure.sh
 
   echo "Installing FZF shell extensions"
-  /usr/local/opt/fzf/install
+  "$(brew --prefix fzf)/install"
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  print "linux!"
+  echo "linux!"
 
   echo "Installing Linux apps"
   $HOME/dev/berfarah/dotfiles/bin/linux-install.sh
