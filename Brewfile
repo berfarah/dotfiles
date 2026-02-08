@@ -45,7 +45,7 @@ system 'npm i -g vscode-langservers-extracted'
 brew 'python'
 
 # Tools that require passwords
-cask 'docker'
+cask 'docker-desktop'
 cask 'claude-code'
 
 # =========================================================
