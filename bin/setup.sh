@@ -18,7 +18,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   print "macos!"
 
   echo "Installing Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   echo "Installing homebrew dependencies"
   brew bundle
@@ -42,7 +42,9 @@ else
 fi
 
 echo "Installing Oh-My-Zsh"
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
 
 echo "Symlinking dotfiles"
 $HOME/dev/berfarah/dotfiles/bin/link.sh
