@@ -3,31 +3,23 @@ cask_args appdir: '/Applications'
 # =========================================================
 # Quicklook extensions
 # =========================================================
-cask 'qlcolorcode'
-cask 'qlimagesize'
-cask 'qlmarkdown'
-cask 'qlprettypatch'
-cask 'qlstephen'
-cask 'quicklook-csv'
-cask 'quicklook-json'
-cask 'webpquicklook'
+if !ENV["ENABLE_QUICKLOOK"].nil?
+  cask 'qlmarkdown'
+  cask 'qlprettypatch'
+  cask 'qlstephen'
+  cask 'quicklook-csv'
+  cask 'quicklook-json'
+  cask 'webpquicklook'
+end
 
-tap 'caskroom/fonts'
 cask 'font-source-code-pro'
 
 # =========================================================
 # Development
 # =========================================================
-# Utils/Build tools
-brew 'autoconf'
-brew 'automake'
-brew 'coreutils'
-brew 'makedepend'
-brew 'pcre'
-brew 'wget'
 
 # Development tools
-cask 'aws-vault'
+brew 'wget'
 brew 'bcrypt'
 brew 'fzf'
 brew 'git'
@@ -38,34 +30,27 @@ system 'pip3 install neovim'
 brew 'p7zip'
 brew 'ripgrep'
 brew 'tree'
-brew 'watchman'
 brew 'gh'
+
+if !ENV["WORK_MACHINE"].nil?
+  cask 'aws-vault'
+end
 
 # Languages
 brew 'go'
-brew 'nodenv'
+brew 'node'
 brew 'python'
-brew 'yarn', args: ['without-node']
 
 # Tools that require passwords
-cask 'docker-toolbox'
-cask 'caskroom/versions/java8'
+cask 'docker'
+cask 'claude-code'
 
 # =========================================================
 # Applications
 # =========================================================
-cask 'alfred'
+cask 'raycast'
 cask 'iterm2'
-cask 'paw'
 cask 'spotify'
 cask 'elgato-wave-link'
 cask 'elgato-stream-deck'
 cask 'elgato-control-center'
-cask 'rectangle' # replacement for spectacle
-
-mas 'DaisyDisk', id: 411643860
-mas 'Fantastical 2', id: 975937182
-mas 'Kindle', id: 405399194
-mas 'Magnet', id: 441258766
-mas 'The Archive Browser', id: 510232205
-mas 'The Unarchiver', id: 425424353
