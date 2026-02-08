@@ -18,7 +18,6 @@ Plug 'vim-airline/vim-airline-themes'
 -- Tooling
 Plug '/opt/homebrew/opt/fzf'
 Plug('junegunn/fzf.vim', {['do'] = vim.fn['fzf#install']})
-Plug 'google/vim-searchindex'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -36,7 +35,6 @@ Plug 'w0rp/ale'
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
 
 -- Autocomplete
 Plug 'hrsh7th/cmp-nvim-lsp'
