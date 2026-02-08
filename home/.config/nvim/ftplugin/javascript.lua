@@ -1,1 +1,1 @@
-vim.g.ale_fixers['javascript'] = {'prettier'}
+vim.b.ale_fixers = {'prettier'}

@@ -1,2 +1,2 @@
-vim.g.ale_fixers['typescript'] = {'prettier'}
-vim.g.ale_linters['typescript'] = {'tsserver', 'typecheck', 'prettier'}
+vim.b.ale_fixers = {'prettier'}
+vim.b.ale_linters = {'tsserver', 'typecheck', 'prettier'}
