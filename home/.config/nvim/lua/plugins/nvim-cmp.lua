@@ -56,7 +56,7 @@ cmp.setup({
 })
 
 vim.api.nvim_create_autocmd('User', {
-  pattern = 'LspAttached',
+  pattern = 'LspAttach',
   desc = 'LSP actions',
   callback = function()
     local bufmap = function(mode, lhs, rhs)

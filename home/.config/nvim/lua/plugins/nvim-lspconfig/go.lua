@@ -1,4 +1,3 @@
-local util = require "lspconfig/util"
 local org_imports = function()
   local bufnr = vim.api.nvim_get_current_buf()
   local clients = vim.lsp.get_clients({buffer=bufnr})
@@ -13,18 +12,19 @@ local org_imports = function()
         if r.edit then
           vim.lsp.util.apply_workspace_edit(r.edit, client.offset_encoding)
         else
-          vim.lsp.buf.execute_command(r.command)
+          client:exec_cmd(r.command)
         end
       end
     end
   end
 end
 
-local lspconfig = require('lspconfig')
-lspconfig.gopls.setup({
+vim.lsp.config('gopls', {
   cmd = {"gopls", "serve"},
   filetypes = {"go", "gomod"},
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  root_dir = function(bufnr, on_dir)
+    on_dir(vim.fs.root(bufnr, {"go.work", "go.mod", ".git"}))
+  end,
   on_attach = function()
     vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*.go",
@@ -33,7 +33,7 @@ lspconfig.gopls.setup({
           vim.lsp.buf.format({async=false})
         end
     })
-    lspconfig.util.default_config.on_attach()
+    vim.lsp.util.default_config.on_attach()
   end,
   settings = {
     gopls = {
@@ -53,3 +53,5 @@ lspconfig.gopls.setup({
     },
   },
 })
+
+vim.lsp.enable('gopls')

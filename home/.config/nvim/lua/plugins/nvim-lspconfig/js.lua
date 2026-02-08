@@ -1,8 +1,4 @@
-local lspconfig = require('lspconfig')
-
-
-lspconfig.eslint.setup({})
-
+vim.lsp.enable('eslint')
 
 -- Recognize the following as json files
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
@@ -11,10 +7,10 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 })
 
 -- Find root git directory for relative file links
-local root_dir = lspconfig.util.find_git_ancestor(vim.fn.getcwd()) or ""
+local root_dir = vim.fs.dirname(vim.fs.find('.git', { path = startpath, upward = true })[1]) or ""
 
 -- Installed via `npm i -g vscode-langservers-extracted`
-lspconfig.jsonls.setup({
+vim.lsp.config('jsonls', {
   settings = {
     json = {
       schemas = {
@@ -72,3 +68,5 @@ lspconfig.jsonls.setup({
     },
   },
 })
+
+vim.lsp.enable('jsonls')
