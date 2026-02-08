@@ -46,20 +46,14 @@ vim.opt.expandtab = true
 
 -- Trim whitespace (and keep cursor in place)
 -- ----------------------------------------------------------------------------
-vim.cmd([[
-function TrimWhiteSpace()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  call cursor(l, c)
-endfunction
+local function trim_whitespace()
+  local pos = vim.api.nvim_win_get_cursor(0)
+  vim.cmd([[%s/\s\+$//e]])
+  vim.api.nvim_win_set_cursor(0, pos)
+end
 
-" Trim whitespace when the file is written to or opened
-autocmd FileWritePre * :call TrimWhiteSpace()
-autocmd FileAppendPre * :call TrimWhiteSpace()
-autocmd FilterWritePre * :call TrimWhiteSpace()
-autocmd BufWritePre * :call TrimWhiteSpace()
-
-" Syntax highlighting for jbuilder
-autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
-]])
+-- Trim whitespace when the file is written to or opened
+vim.api.nvim_create_autocmd({"FileWritePre", "FileAppendPre", "FilterWritePre", "BufWritePre"}, {
+  pattern = "*",
+  callback = trim_whitespace,
+})

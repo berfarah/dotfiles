@@ -24,11 +24,10 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 ]])
 
 -- mappings
-local map = require('utils').map
-map("n", "<C-p>", ":FZF<CR>")
+vim.keymap.set("n", "<C-p>", ":FZF<CR>")
 vim.call('esearch#map', '<C-f>', 'esearch')
-map("n", "<Leader>b", ":Buffers")
-map("n", "gst", ":Gfiles?")
+vim.keymap.set("n", "<Leader>b", ":Buffers")
+vim.keymap.set("n", "gst", ":Gfiles?")
 if not vim.g.esearch then
   vim.g.esearch = {}
 end

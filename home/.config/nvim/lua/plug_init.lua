@@ -18,7 +18,6 @@ Plug 'vim-airline/vim-airline-themes'
 -- Tooling
 Plug '/opt/homebrew/opt/fzf'
 Plug('junegunn/fzf.vim', {['do'] = vim.fn['fzf#install']})
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'eugen0329/vim-esearch'
@@ -26,9 +25,6 @@ Plug 'eugen0329/vim-esearch'
 -- Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'darfink/vim-plist'
-Plug('rstacruz/sparkup', { ['for'] = {'html', 'css', 'eruby'} })
-Plug('tpope/vim-rails', { ['for'] = {'ruby', 'eruby'} })
-Plug('jodosha/vim-godebug', { ['for'] = 'go' })
 
 -- Linting
 Plug 'dense-analysis/ale'
@@ -40,7 +36,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
 -- Snippets
