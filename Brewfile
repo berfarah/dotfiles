@@ -38,7 +38,10 @@ end
 
 # Languages
 brew 'go'
+brew 'gopls'
+brew 'lua-language-server'
 brew 'node'
+system 'npm i -g vscode-langservers-extracted'
 brew 'python'
 
 # Tools that require passwords
