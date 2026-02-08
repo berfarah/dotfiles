@@ -17,12 +17,8 @@ map("v", "=", "=gv")
 
 -- Key bindings
 
--- Make Y consistent with D
-map("n", "Y", "y$")
 -- Nobody ever uses "Ex" mode, and it's annoying to leave
 map("", "Q", "<nop")
--- Paste using automatic indentation
-map("", "<Leader>p", ":set paste<CR><esc>\"*]p:set nopaste<cr>")
 
 -- Get full path of buffer
 map("", "<Leader>cff", ":let @* = expand(\"%:p\")<CR>")

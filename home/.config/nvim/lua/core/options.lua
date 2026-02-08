@@ -21,10 +21,6 @@ vim.opt.hlsearch = true                            -- Highlight after entering s
 vim.opt.splitbelow = true                          -- Horizontal split below
 vim.opt.splitright = true                          -- Vertical split right
 vim.opt.inccommand = "nosplit"  -- Execute search/replace as you're typing
--- if has('conceal')                        " Conceal markers...
---   vim.opt.conceallevel = 2
---   vim.opt.concealcursor = "niv"
--- endif
 
 vim.opt.foldmethod = "syntax"
 vim.opt.foldlevelstart = 99
