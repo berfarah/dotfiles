@@ -20,7 +20,7 @@ Plug '/opt/homebrew/opt/fzf'
 Plug('junegunn/fzf.vim', {['do'] = vim.fn['fzf#install']})
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'eugen0329/vim-esearch'
 
 -- Syntax
@@ -31,7 +31,7 @@ Plug('tpope/vim-rails', { ['for'] = {'ruby', 'eruby'} })
 Plug('jodosha/vim-godebug', { ['for'] = 'go' })
 
 -- Linting
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'
