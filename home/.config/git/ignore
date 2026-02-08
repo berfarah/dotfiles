@@ -46,3 +46,5 @@ tags.lock
 node_modules
 
 .wip
+
+**/.claude/settings.local.json
