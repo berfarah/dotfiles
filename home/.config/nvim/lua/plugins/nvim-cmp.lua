@@ -55,50 +55,45 @@ cmp.setup({
   }
 })
 
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'LspAttach',
+vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
-  callback = function()
-    local bufmap = function(mode, lhs, rhs)
-      local opts = {buffer = true}
-      vim.keymap.set(mode, lhs, rhs, opts)
-    end
+  callback = function(event)
+    local opts = {buffer = event.buf}
 
     -- Displays hover information about the symbol under the cursor
-    bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
     -- Jump to the definition
-    bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 
     -- Jump to declaration
-    bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 
     -- Lists all the implementations for the symbol under the cursor
-    bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 
     -- Jumps to the definition of the type symbol
-    bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+    vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
 
     -- Lists all the references
-    bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 
     -- Displays a function's signature information
-    bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
 
     -- Renames all references to the symbol under the cursor
-    bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
+    vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, opts)
 
     -- Selects a code action available at the current cursor position
-    bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-    bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+    vim.keymap.set({'n', 'x'}, '<F4>', vim.lsp.buf.code_action, opts)
 
     -- Show diagnostics in a floating window
-    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+    vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
 
     -- Move to the previous diagnostic
-    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+    vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count = -1}) end, opts)
 
     -- Move to the next diagnostic
-    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+    vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count = 1}) end, opts)
   end
 })
