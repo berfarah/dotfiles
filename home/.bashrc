@@ -20,10 +20,8 @@ alias git=hub
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_DEFAULT_OPTS='--bind tab:toggle-out,shift-tab:toggle-in,ctrl-a:select-all,ctrl-d:deselect-all'
 
-# Node
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init --no-rehash -)" 2> /dev/null
-(nodenv rehash &) 2> /dev/null # background rehash - much faster
+# mise (manages Node, Go, etc.)
+eval "$(mise activate bash)"
 
 # GO
 export GOPATH="$HOME/Code/golang"

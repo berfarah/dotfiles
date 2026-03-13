@@ -54,10 +54,8 @@ alias ls="ls -G"
 export PROJECTS_PATH="$HOME/dev"
 export PATH="$HOME/.bin:$PATH"
 
-# Node
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init --no-rehash -)" 2> /dev/null
-(nodenv rehash &) 2> /dev/null
+# mise (manages Node, Go, etc.)
+eval "$(mise activate zsh)"
 
 # Go
 export GOPATH="$HOME/dev/golang"

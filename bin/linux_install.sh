@@ -33,22 +33,15 @@ if [[ " ${CHECKED[@]} " =~ " go " ]]; then
 fi
 
 if [[ " ${CHECKED[@]} " =~ " node " ]]; then
-  git clone https://github.com/nodenv/nodenv.git ~/.nodenv
-  cd ~/.nodenv && src/configure && make -C src
+  # Install mise if not present
+  if ! command -v mise &> /dev/null; then
+    curl https://mise.run | sh
+    echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+    echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+    export PATH="$HOME/.local/bin:$PATH"
+  fi
 
-  # Append to zshrc
-  echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.zshrc
-  echo 'eval "$(nodenv init --no-rehash -)" 2> /dev/null' >> ~/.zshrc
-  echo '(nodenv rehash &) 2> /dev/null # background rehash - much faster' >> ~/.zshrc
-
-  # Install latest node version
-  export PATH="$HOME/.nodenv/bin:$PATH"
-  versions=($(IFS='\n' ; nodenv install -l 2>/dev/null)) # get versions from nodenv
-  versions_separated=$(IFS=';' ; echo "${versions[*]}")  # convert to ; separated
-  prompt_for_multiselect selected_version "$versions_separated"
-  version=$(is_selected "${versions[*]}" "${selected_version[*]}")
-  nodenv install $version
-  npm install -g --silent yarn
+  mise use --global node@23.7.0
 fi
 
 if [[ " ${CHECKED[@]} " =~ " neovim " ]]; then
