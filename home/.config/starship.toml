@@ -1,0 +1,299 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+continuation_prompt = "[▸▹ ](dimmed white)"
+
+format = """($nix_shell$container$fill$git_metrics\n)\
+$hostname\
+$localip\
+$shlvl\
+$shell\
+$env_var\
+$jobs\
+$sudo\
+$username\
+$character\
+$directory """
+
+right_format = """
+${custom.git_dirty}\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$package\
+$golang\
+$nodejs\
+$status"""
+
+[fill]
+symbol = ' '
+
+[character]
+format = "$symbol"
+success_symbol = "[▲ ]()"
+error_symbol = "[△ ](red)"
+vimcmd_symbol = "[▲ ](green)"
+
+[env_var.VIMSHELL]
+format = "[$env_value]($style)"
+style = 'green italic'
+
+[sudo]
+format = "[$symbol]($style)"
+style = "bold italic bright-purple"
+symbol = "⋈┈"
+disabled = false
+
+[username]
+style_user = "bright-yellow bold italic"
+style_root = "purple bold italic"
+format = "[⭘ $user]($style) "
+disabled = false
+show_always = false
+
+[directory]
+truncation_length = 3
+use_os_path_sep = true
+style = "yellow"
+format = '[$path]($style) '
+
+[cmd_duration]
+disabled = true
+
+[jobs]
+format = "[$symbol$number]($style) "
+style = "white"
+symbol = "[▶](blue italic)"
+
+[localip]
+ssh_only = true
+format = " ◯[$localipv4](bold magenta)"
+disabled = false
+
+[git_branch]
+format = " [$branch]($style)"
+style = "242"
+truncation_symbol = "⋯"
+truncation_length = 30
+
+[git_metrics]
+disabled = true
+
+[git_status]
+format = "( :: $ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed)"
+ahead = "[⇡${count}](green)"
+behind = "[⇣${count}](red)"
+diverged = "[⇡${ahead_count}](green)[⇣${behind_count}](red)"
+staged = "[+${count}](cyan) "
+modified = "[~${count}](yellow) "
+untracked = "[…](red) "
+renamed = "[»${count}](bright-blue) "
+deleted = "[✕${count}](red) "
+conflicted = "[=%${count}](bright-magenta) "
+stashed = "[*${count}](white) "
+
+[golang]
+symbol = "∩ "
+format = " go [$symbol($version )]($style)"
+
+[nodejs]
+format = " [node](italic) [◫ ($version)](bold bright-green)"
+version_format = "${raw}"
+detect_files = ["package-lock.json", "yarn.lock"]
+detect_folders = ["node_modules"]
+detect_extensions = []
+
+[docker_context]
+symbol = "◧ "
+format = " docker [$symbol$context]($style)"
+
+[package]
+format = " [pkg](italic dimmed) [$symbol$version]($style)"
+version_format = "${raw}"
+symbol = "◨ "
+style = "dimmed yellow italic bold"
+
+[nix_shell]
+style = 'bold italic dimmed blue'
+symbol = '✶'
+format = '[$symbol nix⎪$state⎪]($style) [$name](italic dimmed white)'
+impure_msg = '[⌽](bold dimmed red)'
+pure_msg = '[⌾](bold dimmed green)'
+unknown_msg = '[◌](bold dimmed yellow)'
+
+[custom.git_dirty]
+command = "test -z \"$(git status --porcelain --ignore-submodules 2>/dev/null)\" && printf '\\e[32m⬢\\e[0m' || printf '\\e[31m⬡\\e[0m'"
+when = "git rev-parse --git-dir"
+format = "$output"
+shell = ["sh"]
+
+# Disabled modules
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
+[battery]
+disabled = true
+
+[buf]
+disabled = true
+
+[c]
+disabled = true
+
+[cmake]
+disabled = true
+
+[cobol]
+disabled = true
+
+[conda]
+disabled = true
+
+[crystal]
+disabled = true
+
+[daml]
+disabled = true
+
+[dart]
+disabled = true
+
+[deno]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[erlang]
+disabled = true
+
+[fennel]
+disabled = true
+
+[fortran]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[gradle]
+disabled = true
+
+[guix_shell]
+disabled = true
+
+[haskell]
+disabled = true
+
+[haxe]
+disabled = true
+
+[helm]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[lua]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[meson]
+disabled = true
+
+[nim]
+disabled = true
+
+[ocaml]
+disabled = true
+
+[opa]
+disabled = true
+
+[openstack]
+disabled = true
+
+[perl]
+disabled = true
+
+[php]
+disabled = true
+
+[pixi]
+disabled = true
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[python]
+disabled = true
+
+[raku]
+disabled = true
+
+[red]
+disabled = true
+
+[rlang]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[scala]
+disabled = true
+
+[solidity]
+disabled = true
+
+[spack]
+disabled = true
+
+[swift]
+disabled = true
+
+[terraform]
+disabled = true
+
+[time]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[vlang]
+disabled = true
+
+[xmake]
+disabled = true
+
+[zig]
+disabled = true
+
+[cpp]
+disabled = true

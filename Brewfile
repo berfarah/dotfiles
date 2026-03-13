@@ -32,6 +32,7 @@ brew 'tree-sitter-cli'
 system 'pip3 install neovim'
 brew 'p7zip'
 brew 'ripgrep'
+brew 'starship'
 brew 'tree'
 brew 'gh'
 

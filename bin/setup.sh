@@ -41,11 +41,6 @@ else
   echo "Unsupported OS: $OSTYPE, exiting"
 fi
 
-echo "Installing Oh-My-Zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-
 echo "Symlinking dotfiles"
 $HOME/dev/berfarah/dotfiles/bin/link.sh
 

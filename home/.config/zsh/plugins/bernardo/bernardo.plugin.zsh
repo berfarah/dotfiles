@@ -1,5 +1,6 @@
-PLUGIN="$ZSH_CUSTOM/plugins/bernardo"
+PLUGIN="${0:h}"
 
+source "$PLUGIN/macos.zsh"
 source "$PLUGIN/alias.zsh"
 source "$PLUGIN/projects.zsh"
 source "$PLUGIN/git.zsh"
