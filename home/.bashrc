@@ -13,8 +13,6 @@ alias dev="cd $PROJECTS_PATH"
 # ripgrep
 alias ag='rg'
 
-# hub
-alias git=hub
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden'

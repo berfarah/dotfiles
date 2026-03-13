@@ -1,17 +1,5 @@
 cask_args appdir: '/Applications'
 
-# =========================================================
-# Quicklook extensions
-# =========================================================
-if !ENV["ENABLE_QUICKLOOK"].nil?
-  cask 'qlmarkdown'
-  cask 'qlprettypatch'
-  cask 'qlstephen'
-  cask 'quicklook-csv'
-  cask 'quicklook-json'
-  cask 'webpquicklook'
-end
-
 cask 'font-source-code-pro'
 cask 'font-sauce-code-pro-nerd-font'
 
