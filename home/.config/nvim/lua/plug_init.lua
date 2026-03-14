@@ -21,7 +21,7 @@ require("lazy").setup({
   -- Tooling
   { 'junegunn/fzf.vim', dependencies = {{ dir = '/opt/homebrew/opt/fzf' }}, init = init('fzf') },
   'tpope/vim-surround',
-  { 'nvim-tree/nvim-tree.lua', config = config('nvim-tree') },
+  { 'nvim-tree/nvim-tree.lua', dependencies = { 'lewis6991/gitsigns.nvim' }, config = config('nvim-tree') },
   { 'eugen0329/vim-esearch', config = config('esearch') },
 
   -- Syntax
