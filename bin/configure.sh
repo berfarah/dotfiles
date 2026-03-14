@@ -18,37 +18,31 @@ if [ -n "$compname" ]; then
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $compname
 fi
 
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
 # Dark mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
 # Turn on app auto-update
 sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
 
-# Always show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+# Show scrollbars when scrolling (default, kept for documentation)
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
 # General: Disable save documents to iCloud
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# General: automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# General: disable the "Are you sure you want to open this application?" dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 ############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input              #
 ############################################################################
 
-# Trackpad: enable tap to click
+# Trackpad: enable tap to click (built-in + external)
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# General: enable "natural" (Lion-style) scrolling
+# Natural scrolling (default, kept for documentation)
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
 # General: Disable cursor magnification on shake (El Capitan+)
@@ -115,9 +109,6 @@ defaults write com.apple.finder ShowStatusBar -bool false
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool false
-
-# Finder: display full path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -189,13 +180,6 @@ defaults write com.apple.dock autohide -bool true
 
 # Dock: make icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
-
-############################################################################
-# Terminal
-############################################################################
-
-# Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
 
 ############################################################################
 # Kill affected applications                                               #
