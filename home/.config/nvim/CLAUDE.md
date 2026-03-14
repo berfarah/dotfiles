@@ -4,13 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a Neovim (0.11+) configuration written entirely in Lua. It is part of a larger dotfiles repo and lives at `home/.config/nvim/`. Plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug) (auto-installed to `autoload/plug.vim`).
+This is a Neovim (0.11+) configuration written entirely in Lua. It is part of a larger dotfiles repo and lives at `home/.config/nvim/`. Plugins are managed with [lazy.nvim](https://github.com/folke/lazy.nvim) (auto-bootstrapped on first launch).
 
 ## Commands
 
-- **Install plugins:** `:PlugInstall` (inside Neovim)
-- **Update plugins:** `:PlugUpdate`
-- **Remove unlisted plugins:** `:PlugClean`
+- **Plugin UI:** `:Lazy` (install, update, clean, profile)
 - **Check LSP status:** `:LspInfo`
 - **Validate config syntax:** `nvim --headless -c 'quit'` (exits cleanly if no errors)
 
@@ -18,7 +16,7 @@ This is a Neovim (0.11+) configuration written entirely in Lua. It is part of a 
 
 ### Loading order (`init.lua`)
 
-1. `plug_init` — declares all plugins via vim-plug
+1. `plug_init` — bootstraps lazy.nvim and declares all plugins
 2. `core/options` — editor settings (indentation, undo/backup paths, whitespace trimming)
 3. `core/keybinds` — global keymaps (leader is `<Space>`)
 4. `core/colors` — theme (`hybrid_material`, dark, transparent background)
@@ -30,7 +28,7 @@ This is a Neovim (0.11+) configuration written entirely in Lua. It is part of a 
 - `lua/plugins/` — per-plugin config files, each loaded explicitly from `init.lua`
 - `lua/plugins/nvim-lspconfig/` — LSP server configs split by language (go, js, lua)
 - `ftplugin/` — filetype-specific overrides (tab width, ALE fixers/linters, spell check)
-- `plugged/` — vim-plug install directory (not user-managed, do not edit)
+- lazy.nvim installs plugins to `~/.local/share/nvim/lazy/` (not user-managed)
 
 ### Plugin stack
 

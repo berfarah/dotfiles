@@ -1,43 +1,48 @@
--- Install vim-plug if we don't already have it
-vim.cmd([[
-if empty(glob("~/.config/nvim/autoload/plug.vim"))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source ~/.config/nvim/init.lua
-endif
-]])
+-- Bootstrap lazy.nvim if not installed
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.uv.fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-local Plug = vim.fn['plug#']
-vim.call("plug#begin", "~/.config/nvim/plugged")
+-- Helpers: load lua/plugins/<name>.lua before or after a plugin loads
+local function init(mod) return function() require('plugins/' .. mod) end end
+local function config(mod) return function() require('plugins/' .. mod) end end
 
--- Theme
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+require("lazy").setup({
+  -- Theme
+  { 'kristijanhusak/vim-hybrid-material', lazy = false, priority = 1000 },
+  { 'vim-airline/vim-airline', lazy = false, dependencies = { 'vim-airline/vim-airline-themes' }, init = init('airline') },
 
--- Tooling
-Plug '/opt/homebrew/opt/fzf'
-Plug('junegunn/fzf.vim', {['do'] = vim.fn['fzf#install']})
-Plug 'tpope/vim-surround'
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'eugen0329/vim-esearch'
+  -- Tooling
+  { 'junegunn/fzf.vim', dependencies = {{ dir = '/opt/homebrew/opt/fzf' }}, init = init('fzf') },
+  'tpope/vim-surround',
+  { 'nvim-tree/nvim-tree.lua', config = config('nvim-tree') },
+  { 'eugen0329/vim-esearch', config = config('esearch') },
 
--- Syntax
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
-Plug 'darfink/vim-plist'
+  -- Syntax
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', config = config('treesitter') },
+  'darfink/vim-plist',
 
--- Linting
-Plug 'dense-analysis/ale'
+  -- Linting
+  { 'dense-analysis/ale', init = init('ale') },
 
--- LSP
-Plug 'neovim/nvim-lspconfig'
+  -- LSP & Completion
+  { 'saghen/blink.cmp', version = '*' },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = { 'saghen/blink.cmp' },
+    config = function()
+      require('plugins/blink-cmp')
+      require('plugins/nvim-lspconfig')
+    end,
+  },
 
--- Autocomplete
-Plug('saghen/blink.cmp', {tag = '*'})
-
--- Git
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'tyru/open-browser.vim'
-Plug 'tyru/open-browser-github.vim'
-
-vim.call("plug#end")
+  -- Git
+  { 'lewis6991/gitsigns.nvim', config = config('gitsigns') },
+  { 'tyru/open-browser-github.vim', dependencies = { 'tyru/open-browser.vim' } },
+})
