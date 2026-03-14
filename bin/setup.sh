@@ -23,9 +23,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Installing homebrew dependencies"
   brew bundle
 
-  echo "Copying over old preferences"
-  chmod 0600 ./plists/*
-  cp -R ./plists/ ~/Library/Preferences/
+  echo "Configuring app preferences"
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.config/iterm2"
+  defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
   echo "Configuring miscellaneous mac settings"
   $HOME/dev/berfarah/dotfiles/bin/configure.sh

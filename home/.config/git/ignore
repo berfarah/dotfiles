@@ -36,15 +36,6 @@
 ehthumbs.db
 Thumbs.db
 
-*.sublime-*
-
-.pt
-tags
-tags.temp
-tags.lock
-
 node_modules
-
-.wip
 
 **/.claude/settings.local.json

@@ -2,7 +2,6 @@
   email = ber@bernardo.me
   name = Bernardo Farah
 [alias]
-  cur = !bash -c '"echo ${GIT_DIR}"'
   aa = !git ls-files -d | xargs -r git rm && git ls-files -m -o --exclude-standard | xargs -r git add
   fix = "!sh -c '$EDITOR -p `git diff --name-only --diff-filter=U`'"
   aup = "!sh -c 'git ls-files -m | grep $1 | xargs -r git add' -"
@@ -14,7 +13,6 @@
   rmg = "!sh -c 'git ls-files -d | grep $1 | xargs -r git rm' -"
   rsg = "!sh -c 'git ls-files -c | grep $1 | xargs -r git reset' -"
   lg = log --graph --pretty=oneline --abbrev-commit --decorate
-  sh = !git-sh
   lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   co = checkout

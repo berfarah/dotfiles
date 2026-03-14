@@ -16,7 +16,8 @@
 /home/.config/codeclimate
 /home/.config/configstore
 /home/.config/hub
-/home/.config/iterm2
+/home/.config/iterm2/*
+!/home/.config/iterm2/com.googlecode.iterm2.plist
 /home/.config/karabiner/assets
 /home/.config/karabiner/automatic_backups/
 /home/.config/ranger
