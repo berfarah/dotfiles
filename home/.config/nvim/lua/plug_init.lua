@@ -19,7 +19,7 @@ require("lazy").setup({
   { 'vim-airline/vim-airline', lazy = false, dependencies = { 'vim-airline/vim-airline-themes' }, init = init('airline') },
 
   -- Tooling
-  { 'junegunn/fzf.vim', dependencies = {{ dir = '/opt/homebrew/opt/fzf' }}, init = init('fzf') },
+  { 'junegunn/fzf.vim', dependencies = {{ dir = vim.fn.system('brew --prefix fzf'):gsub('%s+$', '') }}, init = init('fzf') },
   'tpope/vim-surround',
   { 'nvim-tree/nvim-tree.lua', dependencies = { 'lewis6991/gitsigns.nvim' }, config = config('nvim-tree') },
   { 'eugen0329/vim-esearch', config = config('esearch') },

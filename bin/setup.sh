@@ -32,12 +32,19 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "linux!"
 
   echo "Installing Linux apps"
-  $HOME/dev/berfarah/dotfiles/bin/linux-install.sh
+  $HOME/dev/berfarah/dotfiles/bin/linux_install.sh
 else
   echo "Unsupported OS: $OSTYPE, exiting"
 fi
 
 echo "Symlinking dotfiles"
 $HOME/dev/berfarah/dotfiles/bin/link.sh
+
+if command -v mise &>/dev/null; then
+  echo "Installing Node via mise"
+  eval "$(mise activate bash)"
+  mise use --global node@23.7.0
+  npm i -g typescript typescript-language-server vscode-langservers-extracted
+fi
 
 echo "Done!"

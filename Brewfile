@@ -32,8 +32,6 @@ end
 brew 'go'
 brew 'gopls'
 brew 'lua-language-server'
-system 'mise use --global node@23.7.0'
-system 'npm i -g typescript typescript-language-server vscode-langservers-extracted'
 brew 'python'
 
 # Tools that require passwords
