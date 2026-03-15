@@ -5,25 +5,16 @@
 /home/.config/nvim/backup/*
 /home/.config/nvim/undo/*
 /home/.config/nvim/sessions/*
-/home/.config/nvim/plugged/
-/home/.config/nvim/autoload/
-/home/.config/nvim/.init.vim-rplugin~
 /home/.config/nvim/.netrwhist
-
 
 # Ignore some configs
 /home/.config/.mono
 /home/.config/codeclimate
 /home/.config/configstore
-/home/.config/hub
-/home/.config/iterm2/*
-!/home/.config/iterm2/com.googlecode.iterm2.plist
 /home/.config/karabiner/assets
 /home/.config/karabiner/automatic_backups/
-/home/.config/ranger
 /home/.config/yarn
 /home/.config/htop
-/home/.config/coc
 
 # Ignore secrets
 /home/.config/zsh/secrets.sh

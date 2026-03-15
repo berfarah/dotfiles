@@ -2,7 +2,7 @@
 export KEYTIMEOUT=1
 # Vim mode block cursor
 function zle-keymap-select zle-line-init {
-    # change cursor shape in iTerm2
+    # change cursor shape in terminal
     case $KEYMAP in
         vicmd)      print -n -- "\e[2 q";;  # block cursor
         viins|main) print -n -- "\e[6 q";;  # line cursor
