@@ -44,7 +44,7 @@ cask 'claude-code'
 # Applications
 # =========================================================
 cask 'raycast'
-cask 'iterm2'
+cask 'ghostty'
 cask 'spotify'
 cask 'elgato-wave-link'
 cask 'elgato-stream-deck'

@@ -1,0 +1,43 @@
+# Font
+font-family = SauceCodePro Nerd Font
+font-size = 14
+
+# Colors — hybrid material
+foreground = #c5c8c6
+background = #263238
+cursor-color = #feaf3c
+cursor-text = #061923
+selection-background = #455a64
+selection-foreground = #c5c8c6
+
+palette = 0=#253238
+palette = 1=#cc6666
+palette = 2=#b5bd68
+palette = 3=#f0c674
+palette = 4=#81a2be
+palette = 5=#b294bb
+palette = 6=#8abeb7
+palette = 7=#e5e8e6
+palette = 8=#4a5256
+palette = 9=#d87676
+palette = 10=#c0c876
+palette = 11=#fcd891
+palette = 12=#90b6d6
+palette = 13=#c8a8d2
+palette = 14=#9dd5cd
+palette = 15=#e6e9e7
+
+# Window
+window-padding-x = 4
+window-padding-y = 4
+window-theme = dark
+macos-titlebar-style = tabs
+window-height = 30
+window-width = 100
+background-opacity = 0.85
+background-blur = macos-glass-regular
+copy-on-select = clipboard
+keybind = super+,=text:ghostty +edit-config\n
+
+macos-icon = retro
+macos-icon-frame = chrome
