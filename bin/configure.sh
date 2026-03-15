@@ -36,14 +36,13 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input              #
 ############################################################################
 
-# Trackpad: enable tap to click (built-in + external)
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+# Trackpad: enable tap to click (external only, not built-in)
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool false
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Natural scrolling (default, kept for documentation)
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+# Disable natural scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # General: Disable cursor magnification on shake (El Capitan+)
 defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool true
@@ -51,14 +50,10 @@ defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool true
 # Enable full keyboard access for all controls (tab through dialogue)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# General: enable scroll gesture with the Ctrl (^) modifier key to zoom
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-
 # General: disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Set localization language and units
 defaults write NSGlobalDomain AppleLanguages -array "en"
