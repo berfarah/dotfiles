@@ -61,6 +61,9 @@ eval "$(mise activate zsh)"
 export GOPATH="$HOME/dev/golang"
 export PATH="$GOPATH/bin:$PATH"
 
+# Make LESS consistently open for paging
+export LESS="-R"
+
 # =========================================================
 # Plugins
 # =========================================================

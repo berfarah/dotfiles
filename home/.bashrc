@@ -25,4 +25,7 @@ eval "$(mise activate bash)"
 export GOPATH="$HOME/Code/golang"
 export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
 
+# Make LESS consistently open for paging
+export LESS="-R"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
