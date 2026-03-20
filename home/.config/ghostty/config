@@ -1,6 +1,7 @@
 # Font
 font-family = SauceCodePro Nerd Font
 font-size = 14
+font-thicken = true
 
 # Colors — hybrid material
 foreground = #c5c8c6
